@@ -1,0 +1,553 @@
+// Bismillah ir-Rahman ir-Rahim
+// 
+// Al-Asma ul-Husna -- The 99 Beautiful Names of Allah
+//   Allah -- The God
+//   Ar-Rahman -- The Most Merciful
+//   Ar-Rahim -- The Most Compassionate
+//   Al-Malik -- The King
+//   Al-Quddus -- The Most Holy
+//   As-Salam -- The Source of Peace
+//   Al-Mu'min -- The Guardian of Faith
+//   Al-Muhaymin -- The Protector
+//   Al-Aziz -- The Almighty
+//   Al-Jabbar -- The Compeller
+//   Al-Mutakabbir -- The Supreme
+//   Al-Khaliq -- The Creator
+//   Al-Bari -- The Evolver
+//   Al-Musawwir -- The Fashioner
+//   Al-Ghaffar -- The Forgiver
+//   Al-Qahhar -- The Subduer
+//   Al-Wahhab -- The Bestower
+//   Ar-Razzaq -- The Provider
+//   Al-Fattah -- The Opener
+//   Al-Alim -- The All-Knowing
+//   Al-Qabid -- The Restrainer
+//   Al-Basit -- The Expander
+//   Al-Khafid -- The Abaser
+//   Ar-Rafi -- The Exalter
+//   Al-Mu'izz -- The Bestower of Honor
+//   Al-Mudhill -- The Humiliator
+//   As-Sami -- The All-Hearing
+//   Al-Basir -- The All-Seeing
+//   Al-Hakam -- The Judge
+//   Al-Adl -- The Just
+//   Al-Latif -- The Subtle One
+//   Al-Khabir -- The All-Aware
+//   Al-Halim -- The Forbearing
+//   Al-Azim -- The Magnificent
+//   Al-Ghafur -- The All-Forgiving
+//   Ash-Shakur -- The Appreciative
+//   Al-Ali -- The Most High
+//   Al-Kabir -- The Most Great
+//   Al-Hafiz -- The Preserver
+//   Al-Muqit -- The Sustainer
+//   Al-Hasib -- The Reckoner
+//   Al-Jalil -- The Majestic
+//   Al-Karim -- The Generous
+//   Ar-Raqib -- The Watchful
+//   Al-Mujib -- The Responsive
+//   Al-Wasi -- The All-Encompassing
+//   Al-Hakim -- The Perfectly Wise
+//   Al-Wadud -- The Loving One
+//   Al-Majid -- The Most Glorious
+//   Al-Ba'ith -- The Resurrector
+//   Ash-Shahid -- The Witness
+//   Al-Haqq -- The Truth
+//   Al-Wakil -- The Trustee
+//   Al-Qawiyy -- The Most Strong
+//   Al-Matin -- The Firm One
+//   Al-Waliyy -- The Protector
+//   Al-Hamid -- The Praiseworthy
+//   Al-Muhsi -- The Accounter
+//   Al-Mubdi -- The Originator
+//   Al-Mu'id -- The Restorer
+//   Al-Muhyi -- The Giver of Life
+//   Al-Mumit -- The Creator of Death
+//   Al-Hayy -- The Ever Living
+//   Al-Qayyum -- The Self-Subsisting
+//   Al-Wajid -- The Finder
+//   Al-Majid -- The Noble
+//   Al-Wahid -- The Unique
+//   Al-Ahad -- The One
+//   As-Samad -- The Eternal
+//   Al-Qadir -- The Able
+//   Al-Muqtadir -- The Powerful
+//   Al-Muqaddim -- The Expediter
+//   Al-Mu'akhkhir -- The Delayer
+//   Al-Awwal -- The First
+//   Al-Akhir -- The Last
+//   Az-Zahir -- The Manifest
+//   Al-Batin -- The Hidden
+//   Al-Wali -- The Governor
+//   Al-Muta'ali -- The Most Exalted
+//   Al-Barr -- The Source of Goodness
+//   At-Tawwab -- The Acceptor of Repentance
+//   Al-Muntaqim -- The Avenger
+//   Al-Afuww -- The Pardoner
+//   Ar-Ra'uf -- The Most Kind
+//   Malik-ul-Mulk -- Owner of Sovereignty
+//   Dhul-Jalali wal-Ikram -- Lord of Majesty and Generosity
+//   Al-Muqsit -- The Equitable
+//   Al-Jami -- The Gatherer
+//   Al-Ghaniyy -- The Self-Sufficient
+//   Al-Mughni -- The Enricher
+//   Al-Mani -- The Preventer
+//   Ad-Darr -- The Distresser
+//   An-Nafi -- The Propitious
+//   An-Nur -- The Light
+//   Al-Hadi -- The Guide
+//   Al-Badi -- The Originator
+//   Al-Baqi -- The Everlasting
+//   Al-Warith -- The Inheritor
+//   Ar-Rashid -- The Guide to the Right Path
+//   As-Sabur -- The Patient
+// 
+/* Bayyinah demo controller. Vanilla JS, no framework.
+ *
+ * Posts a PDF to /demo/summarize, parses the JSON envelope, and renders
+ * one of: pass / block / mughlaq / error / scan-error. The server-side
+ * handler in bayyinah/demo.py runs the full scan plus optional Claude
+ * summarization in a single round trip; the frontend never calls /scan
+ * separately for the demo path.
+ */
+(function () {
+  "use strict";
+
+  var dropzone = document.getElementById("dropzone");
+  var fileInput = document.getElementById("fileInput");
+  var output = document.getElementById("output");
+  var counterScans = document.getElementById("counter-scans");
+  var counterVisitors = document.getElementById("counter-visitors");
+
+  // -----------------------------------------------------------------------
+  // Scan counter strip: fetch /demo/stats on load and after each scan.
+  // -----------------------------------------------------------------------
+  function formatCount(n) {
+    if (typeof n !== "number" || !isFinite(n)) return "-";
+    return n.toLocaleString("en-US");
+  }
+
+  async function refreshStats() {
+    if (!counterScans || !counterVisitors) return;
+    try {
+      var resp = await fetch("/demo/stats", { cache: "no-store" });
+      if (!resp.ok) return;
+      var s = await resp.json();
+      counterScans.textContent = formatCount(s.scans);
+      counterVisitors.textContent = formatCount(s.unique_visitors_total);
+    } catch (e) {
+      // Counter is informational only; failures are silent.
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // Post-scan waitlist CTA: appended below the result, calm, not a popup.
+  // -----------------------------------------------------------------------
+  function appendWaitlistCta() {
+    if (!output) return;
+    // Don't stack duplicates if a result re-renders.
+    var existing = output.querySelector(".waitlist-cta-card");
+    if (existing) existing.parentNode.removeChild(existing);
+
+    var card = document.createElement("div");
+    card.className = "waitlist-cta-card";
+    card.innerHTML =
+      "<p class='waitlist-cta-text'>" +
+      "<strong>Want API access?</strong> Join the waitlist for release " +
+      "reports, integration notes, and early access." +
+      "</p>" +
+      "<a class='waitlist-cta-button' href='/#waitlist'>Join the waitlist</a>";
+    output.appendChild(card);
+  }
+
+  function escapeHtml(s) {
+    if (s == null) return "";
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function tierCounts(findings) {
+    var counts = { 1: 0, 2: 0, 3: 0 };
+    (findings || []).forEach(function (f) {
+      if (f.tier === 1 || f.tier === 2 || f.tier === 3) counts[f.tier]++;
+    });
+    return counts;
+  }
+
+  function whatJustHappened(scan, scanMs, blocked, llmTokens) {
+    var n = (scan && scan.findings) ? scan.findings.length : 0;
+    var tc = tierCounts(scan && scan.findings);
+    var forwarded = blocked ? "<strong>NOT</strong> forwarded" : "forwarded";
+    var tokens = blocked ? 0 : (llmTokens || 0);
+    return (
+      "<div class='what-happened'>" +
+      "<p>Scanner ran 159 mechanisms in <strong>" + scanMs + "ms</strong>.</p>" +
+      "<p>Found <strong>" + tc[1] + "</strong> Tier 1, " +
+        "<strong>" + tc[2] + "</strong> Tier 2, " +
+        "<strong>" + tc[3] + "</strong> Tier 3 findings.</p>" +
+      "<p>Document was " + forwarded + " to Claude.</p>" +
+      "<p><strong>" + tokens + "</strong> LLM tokens consumed on this document.</p>" +
+      "</div>"
+    );
+  }
+
+  function renderFindings(findings) {
+    if (!findings || findings.length === 0) {
+      return "<p style='color: var(--muted); margin: 0.5rem 0 0;'>No findings recorded.</p>";
+    }
+    var items = findings.map(function (f) {
+      var concealed =
+        (f.inversion_recovery && f.inversion_recovery.concealed) || null;
+      return (
+        "<li>" +
+        "<span class='mech'>" + escapeHtml(f.mechanism) + "</span> " +
+        "<span class='tier'>(Tier " + escapeHtml(f.tier) + ")</span><br>" +
+        "<span style='font-size: 0.85rem;'>" + escapeHtml(f.location || "") + "</span>" +
+        (f.description ? "<br><span style='font-size: 0.85rem;'>" + escapeHtml(f.description) + "</span>" : "") +
+        (concealed ? "<span class='concealed'>" + escapeHtml(concealed) + "</span>" : "") +
+        "</li>"
+      );
+    });
+    return "<ul class='findings'>" + items.join("") + "</ul>";
+  }
+
+  function render(envelope) {
+    var scan = envelope.scan;
+    var scanMs = envelope.scan_duration_ms || 0;
+    var blocked = !!envelope.blocked;
+    var verdict = (scan && scan.verdict) || "";
+    var summaryError = envelope.summary_error;
+
+    var html = "";
+
+    if (envelope.block_reason === "scan_failed") {
+      html =
+        "<div class='panel error'>" +
+        "<strong>Scanner error.</strong> Document was not analyzed and was not forwarded to Claude." +
+        "<p style='color: var(--muted); margin-top: 0.4rem; font-size: 0.85rem;'>" +
+        escapeHtml(summaryError || "") + "</p>" +
+        "</div>";
+      output.innerHTML = html;
+      return;
+    }
+
+    if (verdict === "mughlaq") {
+      html =
+        "<div class='panel mughlaq'>" +
+        "<span class='verdict-badge verdict-mughlaq'>mughlaq</span>" +
+        "<p style='margin: 0;'><strong>Substrate not readable.</strong> The scanner could not complete its analysis (encrypted, malformed, or unsupported format) and refused to issue a verdict rather than guess. Document was not forwarded to Claude.</p>" +
+        whatJustHappened(scan, scanMs, true, 0) +
+        "</div>";
+      output.innerHTML = html;
+      return;
+    }
+
+    if (verdict === "mushtabih") {
+      html =
+        "<div class='panel mushtabih'>" +
+        "<span class='verdict-badge verdict-mushtabih'>mushtabih</span>" +
+        "<p style='margin: 0;'><strong>Doubtful.</strong> The scan completed and surfaced low-tier signal (Tier 3 only) without verifying any concealment mechanism. The document is neither cleared nor blocked. By policy, mushtabih documents are forwarded to Claude with the findings shown below so a reviewer can judge in context.</p>" +
+        renderFindings(scan && scan.findings) +
+        (envelope.summary ? ("<p class='summary-text'>" + escapeHtml(envelope.summary) + "</p>") : "") +
+        whatJustHappened(scan, scanMs, false, envelope.llm_input_tokens || 0) +
+        "</div>";
+      output.innerHTML = html;
+      return;
+    }
+
+    if (blocked) {
+      html =
+        "<div class='panel block'>" +
+        "<span class='verdict-badge verdict-block'>" + escapeHtml(verdict || "blocked") + "</span>" +
+        "<p style='margin: 0;'><strong>Blocked.</strong> " +
+        "Reason: <code>" + escapeHtml(envelope.block_reason) + "</code>.</p>" +
+        renderFindings(scan && scan.findings) +
+        whatJustHappened(scan, scanMs, true, 0) +
+        "</div>";
+      output.innerHTML = html;
+      return;
+    }
+
+    // Passed scan; check summary state.
+    if (summaryError) {
+      var msg;
+      if (summaryError === "anthropic_key_missing") {
+        msg = "Scan passed; LLM summarization unavailable. Document was not forwarded.";
+      } else if (summaryError === "anthropic_timeout") {
+        msg = "Scan passed; LLM call timed out at 30 seconds. Document was not forwarded.";
+      } else if (summaryError.indexOf("text_extraction_failed") === 0) {
+        msg = "Scan passed; text extraction failed before the LLM call. Document was not forwarded.";
+      } else {
+        msg = "Scan passed; LLM summarization unavailable. Document was not forwarded.";
+      }
+      html =
+        "<div class='panel mughlaq'>" +
+        "<span class='verdict-badge verdict-mughlaq'>" + escapeHtml(verdict || "sahih") + "</span>" +
+        "<p style='margin: 0;'>" + escapeHtml(msg) + "</p>" +
+        "<p style='color: var(--muted); margin-top: 0.4rem; font-size: 0.82rem;'>" +
+        escapeHtml(summaryError) + "</p>" +
+        whatJustHappened(scan, scanMs, false, 0) +
+        "</div>";
+      output.innerHTML = html;
+      return;
+    }
+
+    // Pass + summary present.
+    html =
+      "<div class='panel pass'>" +
+      "<span class='verdict-badge verdict-pass'>" + escapeHtml(verdict || "sahih") + "</span>" +
+      "<p style='margin: 0;'><strong>Passed.</strong> Document forwarded to Claude.</p>" +
+      "<p class='summary-text'>" + escapeHtml(envelope.summary || "") + "</p>" +
+      whatJustHappened(scan, scanMs, false, envelope.llm_input_tokens) +
+      "</div>";
+    output.innerHTML = html;
+  }
+
+  function showStatus(msg) {
+    output.innerHTML =
+      "<div class='panel'>" +
+      "<p class='scan-log'>" + escapeHtml(msg) + "</p>" +
+      "</div>";
+  }
+
+  function showOversize() {
+    output.innerHTML =
+      "<div class='panel error'>" +
+      "<p>File exceeds demo limit (25 MiB). Use the production /scan endpoint for larger files.</p>" +
+      "</div>";
+  }
+
+  function showServerError(detail) {
+    output.innerHTML =
+      "<div class='panel error'>" +
+      "<p><strong>Server error.</strong> " + escapeHtml(detail || "") + "</p>" +
+      "</div>";
+  }
+
+  async function uploadFile(file) {
+    if (!file) return;
+    if (!/\.pdf$/i.test(file.name)) {
+      showServerError("Only PDF files are accepted by this demo.");
+      return;
+    }
+    showStatus("Scanning " + file.name + " ...");
+    var fd = new FormData();
+    fd.append("file", file);
+    try {
+      var resp = await fetch("/demo/summarize", {
+        method: "POST",
+        body: fd,
+      });
+      if (resp.status === 413) {
+        showOversize();
+        return;
+      }
+      if (!resp.ok) {
+        var detail = "";
+        try { detail = (await resp.json()).detail || ""; } catch (e) {}
+        showServerError("HTTP " + resp.status + ". " + detail);
+        return;
+      }
+      var envelope = await resp.json();
+      render(envelope);
+      appendWaitlistCta();
+      refreshStats();
+    } catch (e) {
+      showServerError(String(e));
+    }
+  }
+
+  dropzone.addEventListener("click", function () { fileInput.click(); });
+  fileInput.addEventListener("change", function () {
+    if (fileInput.files && fileInput.files[0]) uploadFile(fileInput.files[0]);
+  });
+  dropzone.addEventListener("dragover", function (e) {
+    e.preventDefault();
+    dropzone.classList.add("hover");
+  });
+  dropzone.addEventListener("dragleave", function () {
+    dropzone.classList.remove("hover");
+  });
+  dropzone.addEventListener("drop", function (e) {
+    e.preventDefault();
+    dropzone.classList.remove("hover");
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      uploadFile(e.dataTransfer.files[0]);
+    }
+  });
+
+  // Exhibit buttons: fetch a whitelisted fixture from
+  // /demo/fixtures/<name>, wrap into a File, and run it through the
+  // exact same uploadFile() path a manual user upload takes. Lets a
+  // visitor see the firewall fire end-to-end without bringing their
+  // own PDF.
+  async function runExhibit(fixtureName) {
+    showStatus("Fetching exhibit " + fixtureName + " ...");
+    try {
+      var resp = await fetch("/demo/fixtures/" + encodeURIComponent(fixtureName));
+      if (!resp.ok) {
+        showServerError("Could not load exhibit (" + resp.status + ").");
+        return;
+      }
+      var blob = await resp.blob();
+      var file = new File([blob], fixtureName, { type: "application/pdf" });
+      await uploadFile(file);
+    } catch (e) {
+      showServerError(String(e));
+    }
+  }
+
+  var exhibitButtons = document.querySelectorAll(".exhibit[data-fixture]");
+  for (var i = 0; i < exhibitButtons.length; i++) {
+    (function (btn) {
+      btn.addEventListener("click", function () {
+        var name = btn.getAttribute("data-fixture");
+        if (name) runExhibit(name);
+      });
+    })(exhibitButtons[i]);
+  }
+
+  // ---------------------------------------------------------------
+  // v1.2.2: live drain log panel.
+  //
+  // Polls /demo/queue/state every 2 seconds while the panel is
+  // visible. On submit, also polls /demo/summary/{job_id} until the
+  // job reaches a terminal state. The panel is unobtrusive when the
+  // queue is empty.
+  // ---------------------------------------------------------------
+
+  var drainLogContainer = null;
+  var drainLogTimer = null;
+
+  function ensureDrainLog() {
+    if (drainLogContainer) return drainLogContainer;
+    var anchor = document.getElementById("output");
+    if (!anchor) return null;
+    drainLogContainer = document.createElement("div");
+    drainLogContainer.id = "drain-log";
+    drainLogContainer.style.cssText = (
+      "margin-top: 1rem; padding: 0.5rem 0.7rem; " +
+      "border: 1px solid #2a2a2a; border-radius: 4px; " +
+      "background: #0a0a0a; font-family: ui-monospace, " +
+      "Menlo, Consolas, monospace; font-size: 0.75rem; " +
+      "color: #888;"
+    );
+    drainLogContainer.innerHTML = (
+      "<div style='color: #d8b864; margin-bottom: 0.3rem;'>" +
+      "queue drain log</div>" +
+      "<div id='drain-log-counts'>pending: 0 in_flight: 0</div>" +
+      "<div id='drain-log-transitions'></div>"
+    );
+    anchor.parentNode.insertBefore(
+      drainLogContainer, anchor.nextSibling
+    );
+    return drainLogContainer;
+  }
+
+  async function refreshDrainLog() {
+    try {
+      var resp = await fetch("/demo/queue/state");
+      if (!resp.ok) return;
+      var state = await resp.json();
+      ensureDrainLog();
+      var counts = document.getElementById("drain-log-counts");
+      var transitions = document.getElementById("drain-log-transitions");
+      if (counts) {
+        counts.textContent = (
+          "pending: " + state.pending +
+          " in_flight: " + state.in_flight +
+          " delivered_1h: " + state.delivered_last_hour +
+          " failed_1h: " + state.failed_permanent_last_hour
+        );
+      }
+      if (transitions && state.recent_transitions) {
+        var rows = state.recent_transitions.slice(0, 8).map(function (t) {
+          var shortId = (t.job_id || "").slice(0, 8);
+          return shortId + ": " + t.from + " to " + t.to;
+        });
+        transitions.innerHTML = rows.map(function (r) {
+          return "<div>" + escapeHtml(r) + "</div>";
+        }).join("");
+      }
+    } catch (e) {
+      // Silent: the drain log is best-effort UI.
+    }
+  }
+
+  function startDrainLog() {
+    if (drainLogTimer) return;
+    refreshDrainLog();
+    drainLogTimer = setInterval(refreshDrainLog, 2000);
+  }
+
+  async function pollSummaryUntilTerminal(jobId) {
+    if (!jobId) return;
+    var maxPolls = 60;  // ~2 minutes at 2s interval
+    for (var i = 0; i < maxPolls; i++) {
+      await new Promise(function (r) { setTimeout(r, 2000); });
+      try {
+        var resp = await fetch(
+          "/demo/summary/" + encodeURIComponent(jobId)
+        );
+        if (!resp.ok) continue;
+        var state = await resp.json();
+        if (state.status === "delivered" ||
+            state.status === "failed_permanent") {
+          var anchor = document.getElementById("output");
+          if (anchor && state.summary) {
+            var card = document.createElement("div");
+            card.className = "panel pass";
+            card.style.marginTop = "0.5rem";
+            card.innerHTML = (
+              "<span class='verdict-badge verdict-pass'>" +
+              "summary delivered</span>" +
+              "<p class='summary-text'>" +
+              escapeHtml(state.summary) + "</p>"
+            );
+            anchor.appendChild(card);
+          } else if (anchor && state.status === "failed_permanent") {
+            var card2 = document.createElement("div");
+            card2.className = "panel block";
+            card2.style.marginTop = "0.5rem";
+            card2.innerHTML = (
+              "<span class='verdict-badge verdict-block'>" +
+              "summary failed</span>" +
+              "<p>" + escapeHtml(state.error || "unknown error") +
+              "</p>"
+            );
+            anchor.appendChild(card2);
+          }
+          return;
+        }
+      } catch (e) {
+        // Continue polling.
+      }
+    }
+  }
+
+  // Hook into the existing render() flow: when the response carries
+  // a summary_job_id, kick off polling. The render() function above
+  // handles the synchronous response; this extension picks up the
+  // async summary delivery.
+  var originalRender = render;
+  render = function (envelope) {
+    originalRender(envelope);
+    startDrainLog();
+    if (envelope && envelope.summary_job_id) {
+      pollSummaryUntilTerminal(envelope.summary_job_id);
+    }
+  };
+
+  // Initial counter fetch on page load.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", refreshStats);
+  } else {
+    refreshStats();
+  }
+})();
+
+// Bismillah ir-Rahman ir-Rahim

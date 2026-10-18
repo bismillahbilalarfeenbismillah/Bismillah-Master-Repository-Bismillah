@@ -1,0 +1,132 @@
+// Bismillah ir-Rahman ir-Rahim
+// 
+// Al-Asma ul-Husna -- The 99 Beautiful Names of Allah
+//   Allah -- The God
+//   Ar-Rahman -- The Most Merciful
+//   Ar-Rahim -- The Most Compassionate
+//   Al-Malik -- The King
+//   Al-Quddus -- The Most Holy
+//   As-Salam -- The Source of Peace
+//   Al-Mu'min -- The Guardian of Faith
+//   Al-Muhaymin -- The Protector
+//   Al-Aziz -- The Almighty
+//   Al-Jabbar -- The Compeller
+//   Al-Mutakabbir -- The Supreme
+//   Al-Khaliq -- The Creator
+//   Al-Bari -- The Evolver
+//   Al-Musawwir -- The Fashioner
+//   Al-Ghaffar -- The Forgiver
+//   Al-Qahhar -- The Subduer
+//   Al-Wahhab -- The Bestower
+//   Ar-Razzaq -- The Provider
+//   Al-Fattah -- The Opener
+//   Al-Alim -- The All-Knowing
+//   Al-Qabid -- The Restrainer
+//   Al-Basit -- The Expander
+//   Al-Khafid -- The Abaser
+//   Ar-Rafi -- The Exalter
+//   Al-Mu'izz -- The Bestower of Honor
+//   Al-Mudhill -- The Humiliator
+//   As-Sami -- The All-Hearing
+//   Al-Basir -- The All-Seeing
+//   Al-Hakam -- The Judge
+//   Al-Adl -- The Just
+//   Al-Latif -- The Subtle One
+//   Al-Khabir -- The All-Aware
+//   Al-Halim -- The Forbearing
+//   Al-Azim -- The Magnificent
+//   Al-Ghafur -- The All-Forgiving
+//   Ash-Shakur -- The Appreciative
+//   Al-Ali -- The Most High
+//   Al-Kabir -- The Most Great
+//   Al-Hafiz -- The Preserver
+//   Al-Muqit -- The Sustainer
+//   Al-Hasib -- The Reckoner
+//   Al-Jalil -- The Majestic
+//   Al-Karim -- The Generous
+//   Ar-Raqib -- The Watchful
+//   Al-Mujib -- The Responsive
+//   Al-Wasi -- The All-Encompassing
+//   Al-Hakim -- The Perfectly Wise
+//   Al-Wadud -- The Loving One
+//   Al-Majid -- The Most Glorious
+//   Al-Ba'ith -- The Resurrector
+//   Ash-Shahid -- The Witness
+//   Al-Haqq -- The Truth
+//   Al-Wakil -- The Trustee
+//   Al-Qawiyy -- The Most Strong
+//   Al-Matin -- The Firm One
+//   Al-Waliyy -- The Protector
+//   Al-Hamid -- The Praiseworthy
+//   Al-Muhsi -- The Accounter
+//   Al-Mubdi -- The Originator
+//   Al-Mu'id -- The Restorer
+//   Al-Muhyi -- The Giver of Life
+//   Al-Mumit -- The Creator of Death
+//   Al-Hayy -- The Ever Living
+//   Al-Qayyum -- The Self-Subsisting
+//   Al-Wajid -- The Finder
+//   Al-Majid -- The Noble
+//   Al-Wahid -- The Unique
+//   Al-Ahad -- The One
+//   As-Samad -- The Eternal
+//   Al-Qadir -- The Able
+//   Al-Muqtadir -- The Powerful
+//   Al-Muqaddim -- The Expediter
+//   Al-Mu'akhkhir -- The Delayer
+//   Al-Awwal -- The First
+//   Al-Akhir -- The Last
+//   Az-Zahir -- The Manifest
+//   Al-Batin -- The Hidden
+//   Al-Wali -- The Governor
+//   Al-Muta'ali -- The Most Exalted
+//   Al-Barr -- The Source of Goodness
+//   At-Tawwab -- The Acceptor of Repentance
+//   Al-Muntaqim -- The Avenger
+//   Al-Afuww -- The Pardoner
+//   Ar-Ra'uf -- The Most Kind
+//   Malik-ul-Mulk -- Owner of Sovereignty
+//   Dhul-Jalali wal-Ikram -- Lord of Majesty and Generosity
+//   Al-Muqsit -- The Equitable
+//   Al-Jami -- The Gatherer
+//   Al-Ghaniyy -- The Self-Sufficient
+//   Al-Mughni -- The Enricher
+//   Al-Mani -- The Preventer
+//   Ad-Darr -- The Distresser
+//   An-Nafi -- The Propitious
+//   An-Nur -- The Light
+//   Al-Hadi -- The Guide
+//   Al-Badi -- The Originator
+//   Al-Baqi -- The Everlasting
+//   Al-Warith -- The Inheritor
+//   Ar-Rashid -- The Guide to the Right Path
+//   As-Sabur -- The Patient
+// 
+// Phase 2.7 fixture #5 — Case M1: missing required field.
+//
+// A mizan block that declares la_tukhsiru and bil_qist but omits
+// la_tatghaw — the upper bound, the do-not-transgress command. The
+// thesis paper §Primitive 4 anchors on Ar-Rahman 55:7-9, which
+// names all three commands together; declaring two of three is
+// the canonical Process-2 risk for this primitive (the developer
+// thinks they have the discipline because the block syntactically
+// exists, but one of the three balance-points is silently
+// missing).
+//
+// Expected: one M1 marad naming the missing field (`la_tatghaw`).
+// Per the brief, M1 fires once per missing field; this fixture
+// has exactly one missing field so exactly one marad.
+
+bismillah PartialBalance {
+    authority: NAMING_MD
+    serves: purpose_hierarchy.balance_for_living_systems
+    scope: calibrate
+    not_scope: nothing_excluded
+}
+
+mizan partial_balance {
+    la_tukhsiru: detection_rate > 0.90
+    bil_qist:    calibrate(corpus, paired_fixtures)
+}
+
+// Bismillah ir-Rahman ir-Rahim

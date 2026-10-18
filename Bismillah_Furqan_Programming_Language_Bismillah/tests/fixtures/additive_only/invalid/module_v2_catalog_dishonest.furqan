@@ -1,0 +1,143 @@
+// Bismillah ir-Rahman ir-Rahim
+// 
+// Al-Asma ul-Husna -- The 99 Beautiful Names of Allah
+//   Allah -- The God
+//   Ar-Rahman -- The Most Merciful
+//   Ar-Rahim -- The Most Compassionate
+//   Al-Malik -- The King
+//   Al-Quddus -- The Most Holy
+//   As-Salam -- The Source of Peace
+//   Al-Mu'min -- The Guardian of Faith
+//   Al-Muhaymin -- The Protector
+//   Al-Aziz -- The Almighty
+//   Al-Jabbar -- The Compeller
+//   Al-Mutakabbir -- The Supreme
+//   Al-Khaliq -- The Creator
+//   Al-Bari -- The Evolver
+//   Al-Musawwir -- The Fashioner
+//   Al-Ghaffar -- The Forgiver
+//   Al-Qahhar -- The Subduer
+//   Al-Wahhab -- The Bestower
+//   Ar-Razzaq -- The Provider
+//   Al-Fattah -- The Opener
+//   Al-Alim -- The All-Knowing
+//   Al-Qabid -- The Restrainer
+//   Al-Basit -- The Expander
+//   Al-Khafid -- The Abaser
+//   Ar-Rafi -- The Exalter
+//   Al-Mu'izz -- The Bestower of Honor
+//   Al-Mudhill -- The Humiliator
+//   As-Sami -- The All-Hearing
+//   Al-Basir -- The All-Seeing
+//   Al-Hakam -- The Judge
+//   Al-Adl -- The Just
+//   Al-Latif -- The Subtle One
+//   Al-Khabir -- The All-Aware
+//   Al-Halim -- The Forbearing
+//   Al-Azim -- The Magnificent
+//   Al-Ghafur -- The All-Forgiving
+//   Ash-Shakur -- The Appreciative
+//   Al-Ali -- The Most High
+//   Al-Kabir -- The Most Great
+//   Al-Hafiz -- The Preserver
+//   Al-Muqit -- The Sustainer
+//   Al-Hasib -- The Reckoner
+//   Al-Jalil -- The Majestic
+//   Al-Karim -- The Generous
+//   Ar-Raqib -- The Watchful
+//   Al-Mujib -- The Responsive
+//   Al-Wasi -- The All-Encompassing
+//   Al-Hakim -- The Perfectly Wise
+//   Al-Wadud -- The Loving One
+//   Al-Majid -- The Most Glorious
+//   Al-Ba'ith -- The Resurrector
+//   Ash-Shahid -- The Witness
+//   Al-Haqq -- The Truth
+//   Al-Wakil -- The Trustee
+//   Al-Qawiyy -- The Most Strong
+//   Al-Matin -- The Firm One
+//   Al-Waliyy -- The Protector
+//   Al-Hamid -- The Praiseworthy
+//   Al-Muhsi -- The Accounter
+//   Al-Mubdi -- The Originator
+//   Al-Mu'id -- The Restorer
+//   Al-Muhyi -- The Giver of Life
+//   Al-Mumit -- The Creator of Death
+//   Al-Hayy -- The Ever Living
+//   Al-Qayyum -- The Self-Subsisting
+//   Al-Wajid -- The Finder
+//   Al-Majid -- The Noble
+//   Al-Wahid -- The Unique
+//   Al-Ahad -- The One
+//   As-Samad -- The Eternal
+//   Al-Qadir -- The Able
+//   Al-Muqtadir -- The Powerful
+//   Al-Muqaddim -- The Expediter
+//   Al-Mu'akhkhir -- The Delayer
+//   Al-Awwal -- The First
+//   Al-Akhir -- The Last
+//   Az-Zahir -- The Manifest
+//   Al-Batin -- The Hidden
+//   Al-Wali -- The Governor
+//   Al-Muta'ali -- The Most Exalted
+//   Al-Barr -- The Source of Goodness
+//   At-Tawwab -- The Acceptor of Repentance
+//   Al-Muntaqim -- The Avenger
+//   Al-Afuww -- The Pardoner
+//   Ar-Ra'uf -- The Most Kind
+//   Malik-ul-Mulk -- Owner of Sovereignty
+//   Dhul-Jalali wal-Ikram -- Lord of Majesty and Generosity
+//   Al-Muqsit -- The Equitable
+//   Al-Jami -- The Gatherer
+//   Al-Ghaniyy -- The Self-Sufficient
+//   Al-Mughni -- The Enricher
+//   Al-Mani -- The Preventer
+//   Ad-Darr -- The Distresser
+//   An-Nafi -- The Propitious
+//   An-Nur -- The Light
+//   Al-Hadi -- The Guide
+//   Al-Badi -- The Originator
+//   Al-Baqi -- The Everlasting
+//   Al-Warith -- The Inheritor
+//   Ar-Rashid -- The Guide to the Right Path
+//   As-Sabur -- The Patient
+// 
+// Phase 2.5 fixture #8 — Case 4 violation (catalog dishonest).
+//
+// THE REFLEXIVITY TEST. This is the load-bearing fixture for
+// thesis Section 7, Failure Mode 1 ("performed alignment at the
+// version-declaration layer") applied to the additive-only escape
+// valve.
+//
+// The major_version_bump catalog claims `removes: severity_weights`,
+// but `severity_weights` is STILL exported. The developer is using
+// the escape valve as a smokescreen: declaring a removal that did
+// not happen, perhaps to placate a code reviewer or to suppress
+// the additive-only check on some other symbol.
+//
+// The escape valve cannot be allowed to lie. The whole framework
+// rests on the catalog being a truthful enumeration of breaking
+// changes. A catalog entry that contradicts the actual exports is
+// the same shape of dishonesty the system is designed to catch.
+//
+// Expected: Case 4 marad naming `severity_weights` and the
+// contradiction between the catalog claim and the exports list.
+
+bismillah RegistryV2DishonestCatalog {
+    authority: NAMING_MD
+    serves: purpose_hierarchy.truth_over_falsehood
+    scope: register
+    not_scope: nothing_excluded
+}
+
+additive_only module ScanRegistry v2.0 {
+    export mechanism_registry: Registry
+    export severity_weights: Weights
+    export scan_limits: ScanLimits
+
+    major_version_bump {
+        removes: severity_weights
+    }
+}
+
+// Bismillah ir-Rahman ir-Rahim

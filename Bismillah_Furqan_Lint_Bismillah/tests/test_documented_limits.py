@@ -1,0 +1,340 @@
+# Bismillah ir-Rahman ir-Rahim
+# 
+# Al-Asma ul-Husna -- The 99 Beautiful Names of Allah
+#   Allah -- The God
+#   Ar-Rahman -- The Most Merciful
+#   Ar-Rahim -- The Most Compassionate
+#   Al-Malik -- The King
+#   Al-Quddus -- The Most Holy
+#   As-Salam -- The Source of Peace
+#   Al-Mu'min -- The Guardian of Faith
+#   Al-Muhaymin -- The Protector
+#   Al-Aziz -- The Almighty
+#   Al-Jabbar -- The Compeller
+#   Al-Mutakabbir -- The Supreme
+#   Al-Khaliq -- The Creator
+#   Al-Bari -- The Evolver
+#   Al-Musawwir -- The Fashioner
+#   Al-Ghaffar -- The Forgiver
+#   Al-Qahhar -- The Subduer
+#   Al-Wahhab -- The Bestower
+#   Ar-Razzaq -- The Provider
+#   Al-Fattah -- The Opener
+#   Al-Alim -- The All-Knowing
+#   Al-Qabid -- The Restrainer
+#   Al-Basit -- The Expander
+#   Al-Khafid -- The Abaser
+#   Ar-Rafi -- The Exalter
+#   Al-Mu'izz -- The Bestower of Honor
+#   Al-Mudhill -- The Humiliator
+#   As-Sami -- The All-Hearing
+#   Al-Basir -- The All-Seeing
+#   Al-Hakam -- The Judge
+#   Al-Adl -- The Just
+#   Al-Latif -- The Subtle One
+#   Al-Khabir -- The All-Aware
+#   Al-Halim -- The Forbearing
+#   Al-Azim -- The Magnificent
+#   Al-Ghafur -- The All-Forgiving
+#   Ash-Shakur -- The Appreciative
+#   Al-Ali -- The Most High
+#   Al-Kabir -- The Most Great
+#   Al-Hafiz -- The Preserver
+#   Al-Muqit -- The Sustainer
+#   Al-Hasib -- The Reckoner
+#   Al-Jalil -- The Majestic
+#   Al-Karim -- The Generous
+#   Ar-Raqib -- The Watchful
+#   Al-Mujib -- The Responsive
+#   Al-Wasi -- The All-Encompassing
+#   Al-Hakim -- The Perfectly Wise
+#   Al-Wadud -- The Loving One
+#   Al-Majid -- The Most Glorious
+#   Al-Ba'ith -- The Resurrector
+#   Ash-Shahid -- The Witness
+#   Al-Haqq -- The Truth
+#   Al-Wakil -- The Trustee
+#   Al-Qawiyy -- The Most Strong
+#   Al-Matin -- The Firm One
+#   Al-Waliyy -- The Protector
+#   Al-Hamid -- The Praiseworthy
+#   Al-Muhsi -- The Accounter
+#   Al-Mubdi -- The Originator
+#   Al-Mu'id -- The Restorer
+#   Al-Muhyi -- The Giver of Life
+#   Al-Mumit -- The Creator of Death
+#   Al-Hayy -- The Ever Living
+#   Al-Qayyum -- The Self-Subsisting
+#   Al-Wajid -- The Finder
+#   Al-Majid -- The Noble
+#   Al-Wahid -- The Unique
+#   Al-Ahad -- The One
+#   As-Samad -- The Eternal
+#   Al-Qadir -- The Able
+#   Al-Muqtadir -- The Powerful
+#   Al-Muqaddim -- The Expediter
+#   Al-Mu'akhkhir -- The Delayer
+#   Al-Awwal -- The First
+#   Al-Akhir -- The Last
+#   Az-Zahir -- The Manifest
+#   Al-Batin -- The Hidden
+#   Al-Wali -- The Governor
+#   Al-Muta'ali -- The Most Exalted
+#   Al-Barr -- The Source of Goodness
+#   At-Tawwab -- The Acceptor of Repentance
+#   Al-Muntaqim -- The Avenger
+#   Al-Afuww -- The Pardoner
+#   Ar-Ra'uf -- The Most Kind
+#   Malik-ul-Mulk -- Owner of Sovereignty
+#   Dhul-Jalali wal-Ikram -- Lord of Majesty and Generosity
+#   Al-Muqsit -- The Equitable
+#   Al-Jami -- The Gatherer
+#   Al-Ghaniyy -- The Self-Sufficient
+#   Al-Mughni -- The Enricher
+#   Al-Mani -- The Preventer
+#   Ad-Darr -- The Distresser
+#   An-Nafi -- The Propitious
+#   An-Nur -- The Light
+#   Al-Hadi -- The Guide
+#   Al-Badi -- The Originator
+#   Al-Baqi -- The Everlasting
+#   Al-Warith -- The Inheritor
+#   Ar-Rashid -- The Guide to the Right Path
+#   As-Sabur -- The Patient
+# 
+# 
+# Al-Asma ul-Husna -- The 99 Beautiful Names of Allah
+#   Allah -- The God
+#   Ar-Rahman -- The Most Merciful
+#   Ar-Rahim -- The Most Compassionate
+#   Al-Malik -- The King
+#   Al-Quddus -- The Most Holy
+#   As-Salam -- The Source of Peace
+#   Al-Mu'min -- The Guardian of Faith
+#   Al-Muhaymin -- The Protector
+#   Al-Aziz -- The Almighty
+#   Al-Jabbar -- The Compeller
+#   Al-Mutakabbir -- The Supreme
+#   Al-Khaliq -- The Creator
+#   Al-Bari -- The Evolver
+#   Al-Musawwir -- The Fashioner
+#   Al-Ghaffar -- The Forgiver
+#   Al-Qahhar -- The Subduer
+#   Al-Wahhab -- The Bestower
+#   Ar-Razzaq -- The Provider
+#   Al-Fattah -- The Opener
+#   Al-Alim -- The All-Knowing
+#   Al-Qabid -- The Restrainer
+#   Al-Basit -- The Expander
+#   Al-Khafid -- The Abaser
+#   Ar-Rafi -- The Exalter
+#   Al-Mu'izz -- The Bestower of Honor
+#   Al-Mudhill -- The Humiliator
+#   As-Sami -- The All-Hearing
+#   Al-Basir -- The All-Seeing
+#   Al-Hakam -- The Judge
+#   Al-Adl -- The Just
+#   Al-Latif -- The Subtle One
+#   Al-Khabir -- The All-Aware
+#   Al-Halim -- The Forbearing
+#   Al-Azim -- The Magnificent
+#   Al-Ghafur -- The All-Forgiving
+#   Ash-Shakur -- The Appreciative
+#   Al-Ali -- The Most High
+#   Al-Kabir -- The Most Great
+#   Al-Hafiz -- The Preserver
+#   Al-Muqit -- The Sustainer
+#   Al-Hasib -- The Reckoner
+#   Al-Jalil -- The Majestic
+#   Al-Karim -- The Generous
+#   Ar-Raqib -- The Watchful
+#   Al-Mujib -- The Responsive
+#   Al-Wasi -- The All-Encompassing
+#   Al-Hakim -- The Perfectly Wise
+#   Al-Wadud -- The Loving One
+#   Al-Majid -- The Most Glorious
+#   Al-Ba'ith -- The Resurrector
+#   Ash-Shahid -- The Witness
+#   Al-Haqq -- The Truth
+#   Al-Wakil -- The Trustee
+#   Al-Qawiyy -- The Most Strong
+#   Al-Matin -- The Firm One
+#   Al-Waliyy -- The Protector
+#   Al-Hamid -- The Praiseworthy
+#   Al-Muhsi -- The Accounter
+#   Al-Mubdi -- The Originator
+#   Al-Mu'id -- The Restorer
+#   Al-Muhyi -- The Giver of Life
+#   Al-Mumit -- The Creator of Death
+#   Al-Hayy -- The Ever Living
+#   Al-Qayyum -- The Self-Subsisting
+#   Al-Wajid -- The Finder
+#   Al-Majid -- The Noble
+#   Al-Wahid -- The Unique
+#   Al-Ahad -- The One
+#   As-Samad -- The Eternal
+#   Al-Qadir -- The Able
+#   Al-Muqtadir -- The Powerful
+#   Al-Muqaddim -- The Expediter
+#   Al-Mu'akhkhir -- The Delayer
+#   Al-Awwal -- The First
+#   Al-Akhir -- The Last
+#   Az-Zahir -- The Manifest
+#   Al-Batin -- The Hidden
+#   Al-Wali -- The Governor
+#   Al-Muta'ali -- The Most Exalted
+#   Al-Barr -- The Source of Goodness
+#   At-Tawwab -- The Acceptor of Repentance
+#   Al-Muntaqim -- The Avenger
+#   Al-Afuww -- The Pardoner
+#   Ar-Ra'uf -- The Most Kind
+#   Malik-ul-Mulk -- Owner of Sovereignty
+#   Dhul-Jalali wal-Ikram -- Lord of Majesty and Generosity
+#   Al-Muqsit -- The Equitable
+#   Al-Jami -- The Gatherer
+#   Al-Ghaniyy -- The Self-Sufficient
+#   Al-Mughni -- The Enricher
+#   Al-Mani -- The Preventer
+#   Ad-Darr -- The Distresser
+#   An-Nafi -- The Propitious
+#   An-Nur -- The Light
+#   Al-Hadi -- The Guide
+#   Al-Badi -- The Originator
+#   Al-Baqi -- The Everlasting
+#   Al-Warith -- The Inheritor
+#   Ar-Rashid -- The Guide to the Right Path
+#   As-Sabur -- The Patient
+# 
+"""Pin v0.3.1's known limitations as tests.
+
+Each test asserts the *current* behaviour of a documented limitation.
+When a future version closes one of these, the test fails and the
+fixer follows the procedure in
+``tests/fixtures/documented_limits/README.md``: delete the fixture,
+remove the README entry, drop the assertion here, add a CHANGELOG
+entry under ``### Fixed``.
+
+The discipline mirrors Bayyinah's adversarial gauntlet directories:
+every claim the documentation makes about behaviour has a fixture
+and a test asserting that behaviour, so the documentation cannot
+silently drift away from the code.
+
+These tests are NOT a statement that the current behaviour is
+correct. They are a statement that the current behaviour is the
+deliberate, documented behaviour, so any change to it (in either
+direction) must be intentional.
+"""
+
+from __future__ import annotations
+
+import subprocess
+import sys
+from pathlib import Path
+
+import pytest
+
+pytestmark = pytest.mark.integration
+REPO_ROOT = Path(__file__).resolve().parents[1]
+FIXTURES = REPO_ROOT / "tests" / "fixtures" / "documented_limits"
+
+
+def _run_check(fixture: str) -> subprocess.CompletedProcess:
+    """Run ``furqan-lint check <fixture>`` and return the result."""
+    return subprocess.run(
+        [sys.executable, "-m", "furqan_lint.cli", "check", str(FIXTURES / fixture)],
+        capture_output=True,
+        text=True,
+        cwd=REPO_ROOT,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Exception-driven fall-through (try body spliced unconditionally)
+# RETIRED in v0.6.0: R3 (zero-return) catches this case because the
+# function 'f' has no return statement on any path. The fixture is
+# kept as a regression target asserting R3 still catches it.
+# ---------------------------------------------------------------------------
+
+
+def test_try_body_raises_with_swallowing_handler_now_caught_by_r3() -> None:
+    """``try: raise; except: pass`` (no return on any path) is now
+    flagged by R3 (zero-return). v0.5.x and earlier: silent PASS.
+    v0.6.0+: ring-close violation.
+
+    Pinning the new behaviour as a regression target. If a future
+    refactor accidentally regresses R3 to skip try-body shapes, this
+    test will fail and the fix is to restore R3's coverage.
+    """
+    result = _run_check("try_body_only_returns_in_block.py")
+    assert result.returncode == 1
+    assert "MARAD" in result.stdout
+    assert "zero_return_path" in result.stdout
+    assert "function 'f'" in result.stdout
+
+
+# ---------------------------------------------------------------------------
+# Aliased Optional / Union imports
+# ---------------------------------------------------------------------------
+
+
+def test_aliased_optional_import_fires_false_positive() -> None:
+    """``from typing import Optional as MyOpt; -> MyOpt[X]`` is
+    treated as non-Optional and a return-None inside fires
+    return_none_mismatch as a false positive.
+
+    Documented limitation: the matcher requires the bare ``Optional``
+    name or the qualified ``typing.Optional`` / ``t.Optional`` forms.
+    Alias resolution needs symbol-table tracking, deferred to a
+    future phase.
+    """
+    result = _run_check("aliased_optional_import.py")
+    assert result.returncode == 1
+    assert "MARAD" in result.stdout
+    assert "return_none_mismatch" in result.stdout
+
+
+def test_aliased_union_import_treated_as_typing_union() -> None:
+    """``Union[X, None]`` is treated as Optional regardless of which
+    module the bare ``Union`` name was imported from. The matcher
+    accepts the head by name and does not consult import provenance.
+
+    Documented limitation (v0.3.3): symmetric form of the
+    aliased-Optional limitation. The fixture imports ``Union`` from
+    ``typing`` so it parses cleanly; the behaviour pinned here is
+    that the matcher would treat ``somelib.Union[X, None]`` the
+    same way (silent PASS) because it never looks at where the
+    name came from. Same fix shape as the Optional case
+    (symbol-table tracking).
+    """
+    result = _run_check("aliased_union_import.py")
+    assert result.returncode == 0
+    assert "PASS" in result.stdout
+
+
+# ---------------------------------------------------------------------------
+# Local classes inside function bodies
+# ---------------------------------------------------------------------------
+
+
+def test_local_class_in_function_methods_not_collected() -> None:
+    """A class defined inside a function body has its methods
+    silently dropped, even though the v0.3.2 nested-class fix
+    (Finding 3) collects methods of nested top-level classes.
+
+    Documented limitation: a local class is a private
+    implementation detail; D24 and ``return_none_mismatch`` exist
+    to keep the public contract honest, so silent passes on
+    locally-scoped classes are deliberate. If a future fixture
+    demonstrates a real regression caused by this, extend the
+    function walker to also descend into nested
+    ``ClassDef``-inside-``FunctionDef``.
+    """
+    result = _run_check("local_class_in_function.py")
+    assert result.returncode == 0
+    assert "PASS" in result.stdout
+
+
+# ---------------------------------------------------------------------------
+# Redundant None arms in PEP 604 unions (v0.3.4 / round-7 Observation 2)
+
+# Bismillah ir-Rahman ir-Rahim

@@ -1,0 +1,373 @@
+# Bismillah ir-Rahman ir-Rahim
+# 
+# Al-Asma ul-Husna -- The 99 Beautiful Names of Allah
+#   Allah -- The God
+#   Ar-Rahman -- The Most Merciful
+#   Ar-Rahim -- The Most Compassionate
+#   Al-Malik -- The King
+#   Al-Quddus -- The Most Holy
+#   As-Salam -- The Source of Peace
+#   Al-Mu'min -- The Guardian of Faith
+#   Al-Muhaymin -- The Protector
+#   Al-Aziz -- The Almighty
+#   Al-Jabbar -- The Compeller
+#   Al-Mutakabbir -- The Supreme
+#   Al-Khaliq -- The Creator
+#   Al-Bari -- The Evolver
+#   Al-Musawwir -- The Fashioner
+#   Al-Ghaffar -- The Forgiver
+#   Al-Qahhar -- The Subduer
+#   Al-Wahhab -- The Bestower
+#   Ar-Razzaq -- The Provider
+#   Al-Fattah -- The Opener
+#   Al-Alim -- The All-Knowing
+#   Al-Qabid -- The Restrainer
+#   Al-Basit -- The Expander
+#   Al-Khafid -- The Abaser
+#   Ar-Rafi -- The Exalter
+#   Al-Mu'izz -- The Bestower of Honor
+#   Al-Mudhill -- The Humiliator
+#   As-Sami -- The All-Hearing
+#   Al-Basir -- The All-Seeing
+#   Al-Hakam -- The Judge
+#   Al-Adl -- The Just
+#   Al-Latif -- The Subtle One
+#   Al-Khabir -- The All-Aware
+#   Al-Halim -- The Forbearing
+#   Al-Azim -- The Magnificent
+#   Al-Ghafur -- The All-Forgiving
+#   Ash-Shakur -- The Appreciative
+#   Al-Ali -- The Most High
+#   Al-Kabir -- The Most Great
+#   Al-Hafiz -- The Preserver
+#   Al-Muqit -- The Sustainer
+#   Al-Hasib -- The Reckoner
+#   Al-Jalil -- The Majestic
+#   Al-Karim -- The Generous
+#   Ar-Raqib -- The Watchful
+#   Al-Mujib -- The Responsive
+#   Al-Wasi -- The All-Encompassing
+#   Al-Hakim -- The Perfectly Wise
+#   Al-Wadud -- The Loving One
+#   Al-Majid -- The Most Glorious
+#   Al-Ba'ith -- The Resurrector
+#   Ash-Shahid -- The Witness
+#   Al-Haqq -- The Truth
+#   Al-Wakil -- The Trustee
+#   Al-Qawiyy -- The Most Strong
+#   Al-Matin -- The Firm One
+#   Al-Waliyy -- The Protector
+#   Al-Hamid -- The Praiseworthy
+#   Al-Muhsi -- The Accounter
+#   Al-Mubdi -- The Originator
+#   Al-Mu'id -- The Restorer
+#   Al-Muhyi -- The Giver of Life
+#   Al-Mumit -- The Creator of Death
+#   Al-Hayy -- The Ever Living
+#   Al-Qayyum -- The Self-Subsisting
+#   Al-Wajid -- The Finder
+#   Al-Majid -- The Noble
+#   Al-Wahid -- The Unique
+#   Al-Ahad -- The One
+#   As-Samad -- The Eternal
+#   Al-Qadir -- The Able
+#   Al-Muqtadir -- The Powerful
+#   Al-Muqaddim -- The Expediter
+#   Al-Mu'akhkhir -- The Delayer
+#   Al-Awwal -- The First
+#   Al-Akhir -- The Last
+#   Az-Zahir -- The Manifest
+#   Al-Batin -- The Hidden
+#   Al-Wali -- The Governor
+#   Al-Muta'ali -- The Most Exalted
+#   Al-Barr -- The Source of Goodness
+#   At-Tawwab -- The Acceptor of Repentance
+#   Al-Muntaqim -- The Avenger
+#   Al-Afuww -- The Pardoner
+#   Ar-Ra'uf -- The Most Kind
+#   Malik-ul-Mulk -- Owner of Sovereignty
+#   Dhul-Jalali wal-Ikram -- Lord of Majesty and Generosity
+#   Al-Muqsit -- The Equitable
+#   Al-Jami -- The Gatherer
+#   Al-Ghaniyy -- The Self-Sufficient
+#   Al-Mughni -- The Enricher
+#   Al-Mani -- The Preventer
+#   Ad-Darr -- The Distresser
+#   An-Nafi -- The Propitious
+#   An-Nur -- The Light
+#   Al-Hadi -- The Guide
+#   Al-Badi -- The Originator
+#   Al-Baqi -- The Everlasting
+#   Al-Warith -- The Inheritor
+#   Ar-Rashid -- The Guide to the Right Path
+#   As-Sabur -- The Patient
+# 
+# 
+# Al-Asma ul-Husna -- The 99 Beautiful Names of Allah
+#   Allah -- The God
+#   Ar-Rahman -- The Most Merciful
+#   Ar-Rahim -- The Most Compassionate
+#   Al-Malik -- The King
+#   Al-Quddus -- The Most Holy
+#   As-Salam -- The Source of Peace
+#   Al-Mu'min -- The Guardian of Faith
+#   Al-Muhaymin -- The Protector
+#   Al-Aziz -- The Almighty
+#   Al-Jabbar -- The Compeller
+#   Al-Mutakabbir -- The Supreme
+#   Al-Khaliq -- The Creator
+#   Al-Bari -- The Evolver
+#   Al-Musawwir -- The Fashioner
+#   Al-Ghaffar -- The Forgiver
+#   Al-Qahhar -- The Subduer
+#   Al-Wahhab -- The Bestower
+#   Ar-Razzaq -- The Provider
+#   Al-Fattah -- The Opener
+#   Al-Alim -- The All-Knowing
+#   Al-Qabid -- The Restrainer
+#   Al-Basit -- The Expander
+#   Al-Khafid -- The Abaser
+#   Ar-Rafi -- The Exalter
+#   Al-Mu'izz -- The Bestower of Honor
+#   Al-Mudhill -- The Humiliator
+#   As-Sami -- The All-Hearing
+#   Al-Basir -- The All-Seeing
+#   Al-Hakam -- The Judge
+#   Al-Adl -- The Just
+#   Al-Latif -- The Subtle One
+#   Al-Khabir -- The All-Aware
+#   Al-Halim -- The Forbearing
+#   Al-Azim -- The Magnificent
+#   Al-Ghafur -- The All-Forgiving
+#   Ash-Shakur -- The Appreciative
+#   Al-Ali -- The Most High
+#   Al-Kabir -- The Most Great
+#   Al-Hafiz -- The Preserver
+#   Al-Muqit -- The Sustainer
+#   Al-Hasib -- The Reckoner
+#   Al-Jalil -- The Majestic
+#   Al-Karim -- The Generous
+#   Ar-Raqib -- The Watchful
+#   Al-Mujib -- The Responsive
+#   Al-Wasi -- The All-Encompassing
+#   Al-Hakim -- The Perfectly Wise
+#   Al-Wadud -- The Loving One
+#   Al-Majid -- The Most Glorious
+#   Al-Ba'ith -- The Resurrector
+#   Ash-Shahid -- The Witness
+#   Al-Haqq -- The Truth
+#   Al-Wakil -- The Trustee
+#   Al-Qawiyy -- The Most Strong
+#   Al-Matin -- The Firm One
+#   Al-Waliyy -- The Protector
+#   Al-Hamid -- The Praiseworthy
+#   Al-Muhsi -- The Accounter
+#   Al-Mubdi -- The Originator
+#   Al-Mu'id -- The Restorer
+#   Al-Muhyi -- The Giver of Life
+#   Al-Mumit -- The Creator of Death
+#   Al-Hayy -- The Ever Living
+#   Al-Qayyum -- The Self-Subsisting
+#   Al-Wajid -- The Finder
+#   Al-Majid -- The Noble
+#   Al-Wahid -- The Unique
+#   Al-Ahad -- The One
+#   As-Samad -- The Eternal
+#   Al-Qadir -- The Able
+#   Al-Muqtadir -- The Powerful
+#   Al-Muqaddim -- The Expediter
+#   Al-Mu'akhkhir -- The Delayer
+#   Al-Awwal -- The First
+#   Al-Akhir -- The Last
+#   Az-Zahir -- The Manifest
+#   Al-Batin -- The Hidden
+#   Al-Wali -- The Governor
+#   Al-Muta'ali -- The Most Exalted
+#   Al-Barr -- The Source of Goodness
+#   At-Tawwab -- The Acceptor of Repentance
+#   Al-Muntaqim -- The Avenger
+#   Al-Afuww -- The Pardoner
+#   Ar-Ra'uf -- The Most Kind
+#   Malik-ul-Mulk -- Owner of Sovereignty
+#   Dhul-Jalali wal-Ikram -- Lord of Majesty and Generosity
+#   Al-Muqsit -- The Equitable
+#   Al-Jami -- The Gatherer
+#   Al-Ghaniyy -- The Self-Sufficient
+#   Al-Mughni -- The Enricher
+#   Al-Mani -- The Preventer
+#   Ad-Darr -- The Distresser
+#   An-Nafi -- The Propitious
+#   An-Nur -- The Light
+#   Al-Hadi -- The Guide
+#   Al-Badi -- The Originator
+#   Al-Baqi -- The Everlasting
+#   Al-Warith -- The Inheritor
+#   Ar-Rashid -- The Guide to the Right Path
+#   As-Sabur -- The Patient
+# 
+"""Unit tests for furqan_lint.rust_adapter.public_names.extract_public_names.
+
+Pins the v0.8.2 contract: the function returns exactly the
+``pub`` item names declared at the file's top level, skipping
+``pub(crate)`` / ``pub(super)`` / ``pub(in path)`` qualifiers
+(per locked decision 2).
+
+Tests are unit-marked and skipped when the [rust] extras are
+not installed (mirrors test_rust_correctness.py shape).
+"""
+
+from __future__ import annotations
+
+import importlib.util
+from pathlib import Path
+
+import pytest
+
+pytestmark = pytest.mark.unit
+
+
+def _rust_extras_present() -> bool:
+    return (
+        importlib.util.find_spec("tree_sitter") is not None
+        and importlib.util.find_spec("tree_sitter_rust") is not None
+    )
+
+
+pytestmark = [
+    pytest.mark.unit,
+    pytest.mark.skipif(
+        not _rust_extras_present(),
+        reason="tree_sitter / tree_sitter_rust not installed; install [rust] extras",
+    ),
+]
+
+
+def test_extract_public_names_collects_pub_items(tmp_path: Path) -> None:
+    """All seven supported item kinds with bare ``pub`` are
+    collected; non-pub items are excluded."""
+    from furqan_lint.rust_adapter import extract_public_names
+
+    src = tmp_path / "lib.rs"
+    src.write_text(
+        "pub fn public_fn() {}\n"
+        "fn private_fn() {}\n"
+        "pub struct PublicStruct {}\n"
+        "struct PrivateStruct {}\n"
+        "pub enum PublicEnum { A }\n"
+        "pub const PUBLIC_CONST: i32 = 1;\n"
+        "pub static PUBLIC_STATIC: i32 = 2;\n"
+        "pub type PublicAlias = i32;\n"
+        "pub mod public_mod {}\n"
+    )
+    names = extract_public_names(src)
+    assert names == frozenset(
+        {
+            "public_fn",
+            "PublicStruct",
+            "PublicEnum",
+            "PUBLIC_CONST",
+            "PUBLIC_STATIC",
+            "PublicAlias",
+            "public_mod",
+        }
+    )
+    assert "private_fn" not in names
+    assert "PrivateStruct" not in names
+
+
+def test_extract_public_names_skips_pub_crate(tmp_path: Path) -> None:
+    """Crate-private items (``pub(crate)``) are NOT part of the
+    external API surface; they must be skipped per locked
+    decision 2."""
+    from furqan_lint.rust_adapter import extract_public_names
+
+    src = tmp_path / "lib.rs"
+    src.write_text(
+        "pub fn truly_public() {}\n"
+        "pub(crate) fn crate_private() {}\n"
+        "pub(super) fn super_private() {}\n"
+        "pub(in crate::module) fn path_restricted() {}\n"
+    )
+    names = extract_public_names(src)
+    assert names == frozenset({"truly_public"})
+
+
+def test_extract_public_names_returns_frozenset(tmp_path: Path) -> None:
+    """The return type is frozenset (not set or list) so the
+    caller can pass it directly to compare_name_sets and so the
+    value is hashable / safely shareable."""
+    from furqan_lint.rust_adapter import extract_public_names
+
+    src = tmp_path / "lib.rs"
+    src.write_text("pub fn foo() {}\n")
+    names = extract_public_names(src)
+    assert isinstance(names, frozenset)
+
+
+def test_extract_public_names_handles_empty_file(tmp_path: Path) -> None:
+    """An empty Rust file or one with only comments returns an
+    empty frozenset (not an error)."""
+    from furqan_lint.rust_adapter import extract_public_names
+
+    src = tmp_path / "lib.rs"
+    src.write_text("// just a comment\n")
+    assert extract_public_names(src) == frozenset()
+
+
+def test_extract_public_names_skips_methods_in_impl(tmp_path: Path) -> None:
+    """Methods inside ``impl Type { ... }`` blocks are NOT
+    collected at the top-level diff layer (they are private to
+    the type per the v0.8.2 design; mirrors goast's pre-v0.8.2
+    bare-method handling but inverted -- the diff treats methods
+    as type-private rather than collapsing them by name).
+
+    The struct itself IS collected, but the impl methods are
+    not. This is the load-bearing pin against a future change
+    that recurses into impl bodies.
+    """
+    from furqan_lint.rust_adapter import extract_public_names
+
+    src = tmp_path / "lib.rs"
+    src.write_text(
+        "pub struct Counter {}\n"
+        "\n"
+        "impl Counter {\n"
+        "    pub fn new() -> Counter { Counter {} }\n"
+        "    pub fn increment(&mut self) {}\n"
+        "}\n"
+    )
+    names = extract_public_names(src)
+    assert names == frozenset({"Counter"})
+    assert "new" not in names
+    assert "increment" not in names
+
+
+def test_extract_public_names_raises_on_parse_error(tmp_path: Path) -> None:
+    """v0.8.3: a syntactically broken Rust source raises
+    RustParseError. Prior to v0.8.3, the diff path silently
+    accepted broken input and produced a false MARAD on every
+    name that existed only on the well-formed side.
+    """
+    from furqan_lint.rust_adapter import extract_public_names
+    from furqan_lint.rust_adapter.translator import RustParseError
+
+    src = tmp_path / "broken.rs"
+    src.write_text("pub fn ){ broken")
+    with pytest.raises(RustParseError):
+        extract_public_names(src)
+
+
+def test_extract_public_names_raises_on_truncated_input(tmp_path: Path) -> None:
+    """v0.8.3: truncated function (missing closing brace)
+    raises RustParseError. Tree-sitter is lenient about partial
+    parses; the gate catches what tree-sitter forgives.
+    """
+    from furqan_lint.rust_adapter import extract_public_names
+    from furqan_lint.rust_adapter.translator import RustParseError
+
+    src = tmp_path / "trunc.rs"
+    src.write_text("pub fn foo() {")
+    with pytest.raises(RustParseError):
+        extract_public_names(src)
+
+# Bismillah ir-Rahman ir-Rahim

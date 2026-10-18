@@ -1,0 +1,954 @@
+<!-- Bismillah ir-Rahman ir-Rahim -->
+<!--  -->
+<!-- Al-Asma ul-Husna -- The 99 Beautiful Names of Allah -->
+<!--   Allah -- The God -->
+<!--   Ar-Rahman -- The Most Merciful -->
+<!--   Ar-Rahim -- The Most Compassionate -->
+<!--   Al-Malik -- The King -->
+<!--   Al-Quddus -- The Most Holy -->
+<!--   As-Salam -- The Source of Peace -->
+<!--   Al-Mu'min -- The Guardian of Faith -->
+<!--   Al-Muhaymin -- The Protector -->
+<!--   Al-Aziz -- The Almighty -->
+<!--   Al-Jabbar -- The Compeller -->
+<!--   Al-Mutakabbir -- The Supreme -->
+<!--   Al-Khaliq -- The Creator -->
+<!--   Al-Bari -- The Evolver -->
+<!--   Al-Musawwir -- The Fashioner -->
+<!--   Al-Ghaffar -- The Forgiver -->
+<!--   Al-Qahhar -- The Subduer -->
+<!--   Al-Wahhab -- The Bestower -->
+<!--   Ar-Razzaq -- The Provider -->
+<!--   Al-Fattah -- The Opener -->
+<!--   Al-Alim -- The All-Knowing -->
+<!--   Al-Qabid -- The Restrainer -->
+<!--   Al-Basit -- The Expander -->
+<!--   Al-Khafid -- The Abaser -->
+<!--   Ar-Rafi -- The Exalter -->
+<!--   Al-Mu'izz -- The Bestower of Honor -->
+<!--   Al-Mudhill -- The Humiliator -->
+<!--   As-Sami -- The All-Hearing -->
+<!--   Al-Basir -- The All-Seeing -->
+<!--   Al-Hakam -- The Judge -->
+<!--   Al-Adl -- The Just -->
+<!--   Al-Latif -- The Subtle One -->
+<!--   Al-Khabir -- The All-Aware -->
+<!--   Al-Halim -- The Forbearing -->
+<!--   Al-Azim -- The Magnificent -->
+<!--   Al-Ghafur -- The All-Forgiving -->
+<!--   Ash-Shakur -- The Appreciative -->
+<!--   Al-Ali -- The Most High -->
+<!--   Al-Kabir -- The Most Great -->
+<!--   Al-Hafiz -- The Preserver -->
+<!--   Al-Muqit -- The Sustainer -->
+<!--   Al-Hasib -- The Reckoner -->
+<!--   Al-Jalil -- The Majestic -->
+<!--   Al-Karim -- The Generous -->
+<!--   Ar-Raqib -- The Watchful -->
+<!--   Al-Mujib -- The Responsive -->
+<!--   Al-Wasi -- The All-Encompassing -->
+<!--   Al-Hakim -- The Perfectly Wise -->
+<!--   Al-Wadud -- The Loving One -->
+<!--   Al-Majid -- The Most Glorious -->
+<!--   Al-Ba'ith -- The Resurrector -->
+<!--   Ash-Shahid -- The Witness -->
+<!--   Al-Haqq -- The Truth -->
+<!--   Al-Wakil -- The Trustee -->
+<!--   Al-Qawiyy -- The Most Strong -->
+<!--   Al-Matin -- The Firm One -->
+<!--   Al-Waliyy -- The Protector -->
+<!--   Al-Hamid -- The Praiseworthy -->
+<!--   Al-Muhsi -- The Accounter -->
+<!--   Al-Mubdi -- The Originator -->
+<!--   Al-Mu'id -- The Restorer -->
+<!--   Al-Muhyi -- The Giver of Life -->
+<!--   Al-Mumit -- The Creator of Death -->
+<!--   Al-Hayy -- The Ever Living -->
+<!--   Al-Qayyum -- The Self-Subsisting -->
+<!--   Al-Wajid -- The Finder -->
+<!--   Al-Majid -- The Noble -->
+<!--   Al-Wahid -- The Unique -->
+<!--   Al-Ahad -- The One -->
+<!--   As-Samad -- The Eternal -->
+<!--   Al-Qadir -- The Able -->
+<!--   Al-Muqtadir -- The Powerful -->
+<!--   Al-Muqaddim -- The Expediter -->
+<!--   Al-Mu'akhkhir -- The Delayer -->
+<!--   Al-Awwal -- The First -->
+<!--   Al-Akhir -- The Last -->
+<!--   Az-Zahir -- The Manifest -->
+<!--   Al-Batin -- The Hidden -->
+<!--   Al-Wali -- The Governor -->
+<!--   Al-Muta'ali -- The Most Exalted -->
+<!--   Al-Barr -- The Source of Goodness -->
+<!--   At-Tawwab -- The Acceptor of Repentance -->
+<!--   Al-Muntaqim -- The Avenger -->
+<!--   Al-Afuww -- The Pardoner -->
+<!--   Ar-Ra'uf -- The Most Kind -->
+<!--   Malik-ul-Mulk -- Owner of Sovereignty -->
+<!--   Dhul-Jalali wal-Ikram -- Lord of Majesty and Generosity -->
+<!--   Al-Muqsit -- The Equitable -->
+<!--   Al-Jami -- The Gatherer -->
+<!--   Al-Ghaniyy -- The Self-Sufficient -->
+<!--   Al-Mughni -- The Enricher -->
+<!--   Al-Mani -- The Preventer -->
+<!--   Ad-Darr -- The Distresser -->
+<!--   An-Nafi -- The Propitious -->
+<!--   An-Nur -- The Light -->
+<!--   Al-Hadi -- The Guide -->
+<!--   Al-Badi -- The Originator -->
+<!--   Al-Baqi -- The Everlasting -->
+<!--   Al-Warith -- The Inheritor -->
+<!--   Ar-Rashid -- The Guide to the Right Path -->
+<!--   As-Sabur -- The Patient -->
+<!--  -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bayyinah Demo: Document Firewall for AI Pipelines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Live demo of Bayyinah as a pre-LLM document firewall. Upload a PDF; if it conceals anything, Claude never sees it.">
+
+  <!-- Open Graph and Twitter card metadata so that pasting
+       https://bayyinah.dev/demo into Discord, Twitter, LinkedIn,
+       iMessage, etc. auto-renders a 1200x630 preview card. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bayyinah">
+  <meta property="og:title" content="Bayyinah Demo: Document Firewall for AI Pipelines">
+  <meta property="og:description" content="Upload a PDF. If the firewall verdict is clean, Claude summarizes it. If it conceals anything, the LLM call is skipped entirely.">
+  <meta property="og:url" content="https://bayyinah.dev/demo">
+  <meta property="og:image" content="https://bayyinah.dev/og-demo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bayyinah Demo: Document Firewall for AI Pipelines">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bayyinah Demo: Document Firewall for AI Pipelines">
+  <meta name="twitter:description" content="Upload a PDF. If the firewall verdict is clean, Claude summarizes it. If it conceals anything, the LLM call is skipped entirely.">
+  <meta name="twitter:image" content="https://bayyinah.dev/og-demo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Match the landing palette exactly so /demo reads as the same
+         publication, not a side widget. */
+      --bg:        #0F1115;
+      --bg-2:      #161A21;
+      --bg-3:      #1D2229;
+      --rule:      #262C36;
+      --rule-2:    #353D4A;
+
+      --vellum:    #E8E4D8;
+      --vellum-dim:#C7C3B5;
+
+      --ink:       #E8E4D8;
+      --ink-2:     #B5B0A2;
+      --muted:     #6F7684;
+      --faint:     #4A515E;
+
+      --lamp:      #F4D58A;
+      --lamp-soft: rgba(244, 213, 138, 0.16);
+      --lamp-glow: rgba(244, 213, 138, 0.55);
+
+      --t1: #E2725B;
+      --t1-soft: rgba(226, 114, 91, 0.14);
+      --t2: #7AA0C4;
+      --t2-soft: rgba(122, 160, 196, 0.14);
+      --t3: #B89B7A;
+      --ok: #8FBF95;
+
+      --fd: 'Source Serif 4', 'Times New Roman', serif;
+      --fs: 'Inter', system-ui, -apple-system, sans-serif;
+      --fm: 'JetBrains Mono', ui-monospace, monospace;
+
+      --ease: cubic-bezier(0.32, 0.72, 0.24, 1.0);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--fs);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: var(--lamp); text-decoration: none; transition: opacity 200ms var(--ease); }
+    a:hover { opacity: 0.78; }
+
+    /* ================================================================
+       LAYOUT: margin index sidebar + main column, mirrors landing
+       ================================================================ */
+    .page {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+      gap: 3rem;
+    }
+
+    /* ---------- margin index sidebar ---------- */
+    .margin-index {
+      position: sticky;
+      top: 3rem;
+      align-self: start;
+      border-right: 1px solid var(--rule);
+      padding-right: 1.5rem;
+    }
+    .brand-mark {
+      font-family: var(--fd);
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--vellum);
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+    .brand-mark a { color: inherit; }
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: var(--fm);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 0;
+      border-bottom: 1px dashed var(--rule);
+    }
+    .meta-row .k { color: var(--muted); }
+    .meta-row .v { color: var(--ink-2); }
+    .nav-back {
+      margin-top: 2.5rem;
+      font-family: var(--fm);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-back a { color: var(--ink-2); }
+
+    /* ---------- main column ---------- */
+    main { min-width: 0; }
+
+    .section-mark {
+      font-family: var(--fm);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lamp);
+      margin-bottom: 1.25rem;
+    }
+    .section-mark .sep { color: var(--faint); margin: 0 0.5rem; }
+
+    h1 {
+      font-family: var(--fd);
+      font-weight: 500;
+      font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--vellum);
+      margin-bottom: 1.25rem;
+      max-width: 22ch;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--lamp);
+    }
+
+    .lede {
+      font-family: var(--fd);
+      font-size: 1.08rem;
+      line-height: 1.55;
+      color: var(--ink-2);
+      max-width: 60ch;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    .body-copy {
+      font-size: 0.98rem;
+      color: var(--ink-2);
+      max-width: 60ch;
+      margin-bottom: 2.25rem;
+    }
+    .body-copy p + p { margin-top: 0.85rem; }
+    .body-copy strong { color: var(--vellum); font-weight: 500; }
+
+    /* ================================================================
+       SCAN COUNTER STRIP: prominent live counter above the drop zone
+       ================================================================ */
+    .scan-counter-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0; 
+      background: var(--bg-2);
+      border: 1px solid var(--rule);
+      border-left: 3px solid #01696F;
+      border-radius: 3px;
+      padding: 0.85rem 1.1rem;
+      margin-bottom: 1.4rem;
+      align-items: center;
+    }
+    .scan-counter-strip .counter-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0 0.5rem;
+      border-left: 1px dashed var(--rule);
+    }
+    .scan-counter-strip .counter-cell:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+    .scan-counter-strip .counter-label {
+      font-family: var(--fm);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scan-counter-strip .counter-value {
+      font-family: var(--fm);
+      font-size: 1.45rem;
+      color: #5DA9AF;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
+      font-weight: 500;
+    }
+    .scan-counter-strip .counter-caption {
+      grid-column: 1 / -1;
+      margin-top: 0.6rem;
+      padding-top: 0.55rem;
+      border-top: 1px solid var(--rule);
+      font-family: var(--fm);
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    /* ================================================================
+       WAITLIST CTA CARD (post-scan): subtle, calm, no popup
+       ================================================================ */
+    .waitlist-cta-card {
+      margin-top: 1rem;
+      padding: 1.1rem 1.3rem;
+      background: var(--bg-2);
+      border: 1px solid var(--rule);
+      border-left: 3px solid #01696F;
+      border-radius: 3px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.9rem 1.4rem;
+      justify-content: space-between;
+    }
+    .waitlist-cta-card .waitlist-cta-text {
+      font-family: var(--fd);
+      font-size: 0.98rem;
+      color: var(--ink-2);
+      max-width: 42ch;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .waitlist-cta-card .waitlist-cta-text strong {
+      color: var(--vellum);
+      font-family: var(--fs);
+      font-weight: 500;
+      font-style: normal;
+    }
+    .waitlist-cta-card .waitlist-cta-button {
+      font-family: var(--fs);
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      padding: 0.55rem 1.05rem;
+      background: transparent;
+      color: var(--lamp);
+      border: 1px solid var(--lamp);
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 200ms var(--ease), color 200ms var(--ease);
+    }
+    .waitlist-cta-card .waitlist-cta-button:hover {
+      background: var(--lamp-soft);
+    }
+
+    /* ================================================================
+       LIT PAGE: drop zone styled as the warm vellum panel
+       (the same metaphor the landing uses for its scan card)
+       ================================================================ */
+    .lit-page {
+      background: var(--vellum);
+      color: #1a1a1a;
+      border-radius: 4px;
+      padding: 2rem 1.75rem;
+      box-shadow:
+        0 1px 0 rgba(244, 213, 138, 0.08) inset,
+        0 24px 48px -16px rgba(0, 0, 0, 0.55);
+      position: relative;
+      transition: box-shadow 300ms var(--ease);
+    }
+    .lit-page::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--lamp-glow) 25%,
+        var(--lamp-glow) 75%,
+        transparent 100%
+      );
+    }
+
+    .page-folio {
+      font-family: var(--fm);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7A7468;
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .page-folio .lamp-dot {
+      display: inline-block;
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 50%;
+      background: #8FBF95;
+      margin-right: 0.4rem;
+      transform: translateY(-1px);
+    }
+
+    .dropzone {
+      display: block;
+      border: 1.5px dashed #B5AC97;
+      border-radius: 4px;
+      padding: 2.25rem 1.25rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 200ms var(--ease), background 200ms var(--ease);
+      font-family: var(--fd);
+      font-size: 1.05rem;
+      color: #4A453B;
+      font-style: italic;
+    }
+    .dropzone:hover,
+    .dropzone.hover {
+      border-color: #6B8E72;
+      background: rgba(143, 191, 149, 0.08);
+    }
+    .dropzone input[type=file] { display: none; }
+    .dropzone strong {
+      font-style: normal;
+      font-family: var(--fs);
+      font-weight: 500;
+      color: #1a1a1a;
+    }
+
+    /* Verdict logic strip: the contract a judge sees before clicking */
+    .verdict-logic {
+      margin-bottom: 1.4rem;
+      padding: 0.95rem 1.05rem;
+      background: #DAD4C2;
+      border: 1px solid #C7BFA7;
+      border-radius: 3px;
+    }
+    .verdict-logic-title {
+      font-family: var(--fm);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7A7468;
+      margin-bottom: 0.7rem;
+    }
+    .verdict-row {
+      display: grid;
+      grid-template-columns: 10rem 5.5rem 1fr;
+      gap: 0.85rem;
+      align-items: baseline;
+      padding: 0.42rem 0;
+      border-top: 1px dashed #B5AC97;
+      font-family: var(--fm);
+      font-size: 0.78rem;
+      color: #4A453B;
+    }
+    .verdict-row:first-of-type { border-top: none; padding-top: 0.2rem; }
+    .verdict-tag {
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .verdict-tag.sahih     { color: #5C8262; }
+    .verdict-tag.mushtabih { color: #8A6B4D; }
+    .verdict-tag.mukhfi    { color: #B85742; }
+    .verdict-tag.munafiq   { color: #B85742; }
+    .verdict-tag.mughlaq   { color: #8A6B4D; }
+    .verdict-arrow {
+      color: #8A8474;
+      font-family: var(--fs);
+    }
+    .verdict-action {
+      font-family: var(--fd);
+      font-style: italic;
+      font-size: 0.86rem;
+      color: #1a1a1a;
+      line-height: 1.45;
+    }
+    .verdict-action strong {
+      font-style: normal;
+      font-family: var(--fs);
+      font-weight: 500;
+    }
+
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin: 1.4rem 0;
+      font-family: var(--fm);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8A8474;
+    }
+    .or-divider::before,
+    .or-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #C7BFA7;
+    }
+
+    /* Three exhibit cards for one-click fixture demo. Each card now
+       opens with a rendered page-1 thumbnail so users see the actual
+       document substrate (or, for the encrypted exhibit, an inline
+       "locked page" illustration that mirrors the substrate-not-
+       readable verdict) before they click. */
+    .exhibits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .exhibit {
+      background: #DAD4C2;
+      border: 1px solid #C7BFA7;
+      border-radius: 3px;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      transition: background 200ms var(--ease), border-color 200ms var(--ease);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .exhibit:hover {
+      background: #CFC8B5;
+      border-color: #A89F84;
+    }
+    /* Thumbnail well: a rendered page-1 image of each fixture, framed
+       so the page edges read as a document, not a screenshot. Aspect
+       ratio matches US Letter (8.5:11) so the framing stays consistent
+       across the three cards. */
+    .exhibit-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 8.5 / 11;
+      background: #F4F1E8;
+      border-bottom: 1px solid #C7BFA7;
+      overflow: hidden;
+    }
+    .exhibit-thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .exhibit-thumb svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    /* Verdict badge layered on the thumbnail's bottom-left corner so
+       the expected verdict path is visible at a glance. Three colour
+       variants follow the framework's tier palette. */
+    .exhibit-verdict-badge {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      font-family: var(--fm);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      font-weight: 500;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+    .exhibit-verdict-badge.sahih   { background: rgba(143, 191, 149, 0.85); color: #2C4A33; }
+    .exhibit-verdict-badge.munafiq { background: rgba(184, 87, 66, 0.85);   color: #FFFFFF; }
+    .exhibit-verdict-badge.mughlaq { background: rgba(138, 107, 77, 0.85);  color: #FFFFFF; }
+    .exhibit-body {
+      padding: 0.85rem 0.85rem 0.95rem;
+    }
+    .exhibit-mark {
+      font-family: var(--fm);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7A7468;
+      margin-bottom: 0.4rem;
+    }
+    .exhibit-title {
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: #1a1a1a;
+      margin-bottom: 0.25rem;
+    }
+    .exhibit-desc {
+      font-family: var(--fd);
+      font-style: italic;
+      font-size: 0.82rem;
+      color: #4A453B;
+      line-height: 1.4;
+    }
+
+    /* ================================================================
+       OUTPUT: verdict panels, in the dark cabinet aesthetic
+       ================================================================ */
+    #output { margin-top: 2rem; }
+
+    .panel {
+      background: var(--bg-2);
+      border: 1px solid var(--rule);
+      border-left-width: 3px;
+      border-radius: 3px;
+      padding: 1.25rem 1.35rem;
+      margin-top: 1rem;
+    }
+    .panel.pass      { border-left-color: var(--ok); }
+    .panel.block     { border-left-color: var(--t1); }
+    .panel.mughlaq   { border-left-color: var(--t3); }
+    .panel.mushtabih { border-left-color: var(--t3); }
+    .panel.error     { border-left-color: var(--muted); }
+
+    .verdict-badge {
+      display: inline-block;
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+      font-family: var(--fm);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+      font-weight: 500;
+    }
+    .verdict-pass      { background: rgba(143, 191, 149, 0.14); color: var(--ok); }
+    .verdict-block     { background: var(--t1-soft); color: var(--t1); }
+    .verdict-mughlaq   { background: rgba(184, 155, 122, 0.18); color: var(--t3); }
+    .verdict-mushtabih { background: rgba(184, 155, 122, 0.18); color: var(--t3); }
+
+    .panel p { color: var(--ink-2); font-size: 0.95rem; }
+    .panel p strong { color: var(--vellum); font-weight: 500; }
+
+    .summary-text {
+      font-family: var(--fd);
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--ink-2);
+      margin-top: 0.85rem;
+      padding: 1rem 1.1rem;
+      background: var(--bg);
+      border-left: 2px solid var(--rule-2);
+      border-radius: 2px;
+    }
+
+    .scan-log {
+      font-family: var(--fm);
+      font-size: 0.82rem;
+      color: var(--muted);
+      white-space: pre-wrap;
+      margin: 0;
+    }
+
+    .what-happened {
+      font-family: var(--fm);
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+    .what-happened p { color: var(--muted); font-size: 0.78rem; margin: 0.2rem 0; }
+    .what-happened strong { color: var(--vellum); font-weight: 500; }
+
+    ul.findings { list-style: none; padding: 0; margin: 0.85rem 0 0; }
+    ul.findings li {
+      padding: 0.7rem 0;
+      border-top: 1px solid var(--rule);
+      font-size: 0.88rem;
+      color: var(--ink-2);
+    }
+    ul.findings li:first-child { border-top: none; }
+    .mech {
+      font-family: var(--fm);
+      color: var(--t1);
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+    }
+    .tier {
+      color: var(--muted);
+      font-family: var(--fm);
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+    }
+    .concealed {
+      font-family: var(--fm);
+      font-size: 0.78rem;
+      color: var(--ink-2);
+      background: var(--bg);
+      padding: 0.45rem 0.6rem;
+      border-radius: 2px;
+      display: block;
+      margin-top: 0.4rem;
+      word-break: break-all;
+      border: 1px solid var(--rule);
+    }
+
+    /* ================================================================
+       FOOTER
+       ================================================================ */
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-family: var(--fm);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+    .footer-note strong { color: var(--ink-2); font-weight: 500; }
+
+    /* ================================================================
+       RESPONSIVE: collapse to single column under 760px
+       ================================================================ */
+    @media (max-width: 760px) {
+      .page {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.25rem 4rem;
+        gap: 2rem;
+      }
+      .margin-index {
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding-right: 0;
+        padding-bottom: 1.5rem;
+      }
+      .nav-back { margin-top: 1rem; }
+      .lit-page { padding: 1.5rem 1.25rem; }
+      .exhibits { grid-template-columns: 1fr; }
+      .verdict-row {
+        grid-template-columns: 7rem 1fr;
+        row-gap: 0.15rem;
+      }
+      .verdict-arrow { display: none; }
+      .verdict-action { grid-column: 1 / -1; padding-left: 0; font-size: 0.82rem; }
+      h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ============== MARGIN INDEX (sidebar) ============== -->
+    <aside class="margin-index">
+      <div class="brand-mark"><a href="/">bayyinah</a></div>
+
+      <div class="meta-row"><span class="k">Case</span><span class="v">v1.2.4</span></div>
+      <div class="meta-row"><span class="k">Date</span><span class="v">2026.05</span></div>
+      <div class="meta-row"><span class="k">Mode</span><span class="v">Firewall</span></div>
+      <div class="meta-row"><span class="k">Model</span><span class="v">Sonnet 4.6</span></div>
+      <div class="meta-row"><span class="k">Mechs</span><span class="v">159</span></div>
+      <div class="meta-row"><span class="k">Tests</span><span class="v">1,837</span></div>
+
+      <div class="nav-back">
+        <a href="/">&larr; Return to the case</a>
+      </div>
+    </aside>
+
+    <!-- ============== MAIN COLUMN ============== -->
+    <main>
+      <div class="section-mark">&sect; Demo<span class="sep">&middot;</span>Document Firewall</div>
+
+      <h1>The page <em>held up to the light</em>, before the model reads it.</h1>
+
+      <p class="lede">
+        Upload a PDF. The scanner runs the same 159 mechanisms that power
+        bayyinah.dev and returns one of five verdicts. If the verdict is
+        sahih (clean) or mushtabih (doubtful), Anthropic's Sonnet 4.6
+        summarizes the document. If it is mukhfi, munafiq, or mughlaq,
+        the model never sees the file, and zero LLM tokens are consumed.
+      </p>
+
+      <div class="body-copy">
+        <p>
+          Most AI safety work assumes the adversarial input has already
+          reached the model. <strong>The firewall argues for verification
+          before ingestion:</strong> deterministic, no inference, no
+          optimizer, no surface for prompt injection because the gate has no
+          goal.
+        </p>
+      </div>
+
+      <!-- ============== SCAN COUNTER STRIP ============== -->
+      <div id="scan-counter-strip" class="scan-counter-strip" aria-live="polite">
+        <div class="counter-cell">
+          <span class="counter-label">Scans run</span>
+          <span class="counter-value" id="counter-scans">&middot;</span>
+        </div>
+        <div class="counter-cell">
+          <span class="counter-label">Unique visitors</span>
+          <span class="counter-value" id="counter-visitors">&middot;</span>
+        </div>
+        <div class="counter-caption">
+          All scans run on the live API. Numbers update on the next page load.
+        </div>
+      </div>
+
+      <!-- ============== LIT PAGE (drop zone + exhibits) ============== -->
+      <div class="lit-page">
+        <div class="page-folio">
+          <span><span class="lamp-dot"></span>Ready</span>
+          <span>Folio 01</span>
+        </div>
+
+        <div class="verdict-logic">
+          <div class="verdict-logic-title">Verdict logic</div>
+          <div class="verdict-row">
+            <span class="verdict-tag sahih">SAHIH (clean)</span>
+            <span class="verdict-arrow">&rarr;</span>
+            <span class="verdict-action"><strong>Sonnet 4.6 reads the file</strong> and returns a summary. Token count is the actual Anthropic billing unit.</span>
+          </div>
+          <div class="verdict-row">
+            <span class="verdict-tag mushtabih">MUSHTABIH (doubtful)</span>
+            <span class="verdict-arrow">&rarr;</span>
+            <span class="verdict-action"><strong>Sonnet 4.6 reads the file with findings attached.</strong> Scan complete; only low-tier signal (Tier 3) surfaced and nothing was verified, so the document is forwarded with the findings shown so a reviewer can judge in context.</span>
+          </div>
+          <div class="verdict-row">
+            <span class="verdict-tag mukhfi">MUKHFI (concealed)</span>
+            <span class="verdict-arrow">&rarr;</span>
+            <span class="verdict-action"><strong>Blocked. The model never sees the file.</strong> Zero LLM tokens consumed. At least one Tier 1 (verified concealment) or Tier 2 (structural anomaly) finding fired.</span>
+          </div>
+          <div class="verdict-row">
+            <span class="verdict-tag munafiq">MUNAFIQ (verified)</span>
+            <span class="verdict-arrow">&rarr;</span>
+            <span class="verdict-action"><strong>Blocked. The model never sees the file.</strong> Zero LLM tokens consumed. Verified concealment with low integrity score (&lt; 0.3) and at least one Tier 1 mechanism.</span>
+          </div>
+          <div class="verdict-row">
+            <span class="verdict-tag mughlaq">MUGHLAQ (locked)</span>
+            <span class="verdict-arrow">&rarr;</span>
+            <span class="verdict-action"><strong>Blocked. The model never sees the file.</strong> Zero LLM tokens consumed. Encrypted or unparseable substrate cannot be verified.</span>
+          </div>
+        </div>
+
+        <label class="dropzone" id="dropzone">
+          <input type="file" id="fileInput" accept="application/pdf,.pdf">
+          <span class="dropzone-label">
+            Drop a PDF here, or <strong>click to choose a file</strong>
+          </span>
+        </label>
+
+        <div class="or-divider">or, examine an exhibit</div>
+
+        <div class="exhibits">
+          <button class="exhibit" type="button" data-fixture="clean_q3_report.pdf">
+            <div class="exhibit-thumb">
+              <img src="/demo/exhibit-thumbnails/clean_q3_report.jpg" alt="Page 1 of a Q3 financial summary with revenue and margin tables" loading="lazy">
+              <span class="exhibit-verdict-badge sahih">sahih</span>
+            </div>
+            <div class="exhibit-body">
+              <div class="exhibit-mark">Exhibit A</div>
+              <div class="exhibit-title">Q3 Financial Report</div>
+              <div class="exhibit-desc">Clean native-text PDF. Expected verdict: sahih &rarr; Sonnet summarizes, ~93 input tokens, 2.28s.</div>
+            </div>
+          </button>
+
+          <button class="exhibit" type="button" data-fixture="adversarial_invisible_text.pdf">
+            <div class="exhibit-thumb">
+              <img src="/demo/exhibit-thumbnails/adversarial_invisible_text.jpg" alt="Page 1 of a near-empty document showing only Hello, Caption, and invoice_pdf.exe; 16 concealment mechanisms are present but invisible" loading="lazy">
+              <span class="exhibit-verdict-badge munafiq">munafiq</span>
+            </div>
+            <div class="exhibit-body">
+              <div class="exhibit-mark">Exhibit B</div>
+              <div class="exhibit-title">Concealment Sample</div>
+              <div class="exhibit-desc">What you see is three lines. What the scanner finds is 16 concealment mechanisms across substrate. Expected verdict: munafiq &rarr; blocked, 0 LLM tokens consumed.</div>
+            </div>
+          </button>
+
+          <button class="exhibit" type="button" data-fixture="encrypted_locked.pdf">
+            <div class="exhibit-thumb">
+              <!-- Encrypted PDFs cannot be rendered, which is the point.
+                   This inline illustration mirrors the mughlaq verdict:
+                   substrate sealed, scanner refuses to guess. -->
+              <svg viewBox="0 0 170 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Locked document illustration">
+                <rect x="15" y="15" width="140" height="190" rx="2" fill="#F4F1E8" stroke="#C7BFA7" stroke-width="1"/>
+                <line x1="30" y1="40" x2="140" y2="40" stroke="#D4CDB8" stroke-width="1" stroke-dasharray="3 2"/>
+                <line x1="30" y1="55" x2="120" y2="55" stroke="#D4CDB8" stroke-width="1" stroke-dasharray="3 2"/>
+                <line x1="30" y1="70" x2="135" y2="70" stroke="#D4CDB8" stroke-width="1" stroke-dasharray="3 2"/>
+                <line x1="30" y1="85" x2="100" y2="85" stroke="#D4CDB8" stroke-width="1" stroke-dasharray="3 2"/>
+                <!-- Padlock body -->
+                <rect x="68" y="125" width="34" height="30" rx="3" fill="#8A6B4D"/>
+                <!-- Padlock shackle -->
+                <path d="M 75 125 L 75 115 a 10 10 0 0 1 20 0 L 95 125" fill="none" stroke="#8A6B4D" stroke-width="4" stroke-linecap="round"/>
+                <!-- Keyhole -->
+                <circle cx="85" cy="137" r="3" fill="#F4F1E8"/>
+                <rect x="83.5" y="137" width="3" height="7" fill="#F4F1E8"/>
+              </svg>
+              <span class="exhibit-verdict-badge mughlaq">mughlaq</span>
+            </div>
+            <div class="exhibit-body">
+              <div class="exhibit-mark">Exhibit C</div>
+              <div class="exhibit-title">Encrypted Document</div>
+              <div class="exhibit-desc">Password-locked PDF. The scanner cannot read the substrate and refuses to guess. Expected verdict: mughlaq &rarr; blocked, 0 LLM tokens consumed.</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ============== OUTPUT: verdict panels render here ============== -->
+      <div id="output"></div>
+
+      <p class="footer-note">
+        <strong>Stateless.</strong> No file is persisted, no request body is
+        logged. The demo runs the same scanner that powers
+        <a href="/">bayyinah.dev</a>, gated by the same block decision used in
+        production. The token count reported is the actual Anthropic billing
+        unit on the request.
+      </p>
+    </main>
+
+  </div>
+
+  <script src="/demo/demo.js"></script>
+</body>
+</html>
+
+<!-- Bismillah ir-Rahman ir-Rahim -->
