@@ -5,7 +5,9 @@
 
 **Date:** 2026-10-18
 **Basis:** 995-paper Bayyinah Research Corpus, 48 deep-read reports, 3 synthesis documents, 1 synthesis proposal
-**Repositories:** Bismillah Divine Protection Encoder (v2.0.0) & Bismillah Master Repository
+**Repositories:**
+- **Encoder:** https://github.com/BismillahBilalArfeenBismillah/Bismillah-Divine-Protection-Encoder-Bismillah
+- **Master:** https://github.com/BismillahBilalArfeenBismillah/Bismillah-Master-Repository-Bismillah
 **Target model families:** Copilot, DeepSeek, Kimi k3, Kimi k2.8, ChatGPT, Grok, Meta
 **Quarantined producer:** Claude (per SHV Axiom 5 -- producer of this strategy is non-qualifying for its verification)
 
