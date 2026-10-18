@@ -1,0 +1,128 @@
+# Bismillah ir-Rahman ir-Rahim
+
+# R0994 -- VERIFICATION ANCHOR -- Minimal byte-level references
+
+**Chronological Index:** 994 of 995  
+**Date:** Undated  
+**Section:** IX. Multi-Model Audit Trail (dispatches, seat reports, councils, ledgers)  
+**Source File:** VERIFICATION_ANCHOR.txt  
+**Source Format:** txt  
+**SHA-256:** `c4f7de1505a61a1b628c724f72d8decc66200095268855db9c77a3d9c5796c4e`  
+
+---
+
+## R0994 · VERIFICATION ANCHOR -- Minimal byte-level references
+
+- section: IX. Multi-Model Audit Trail (dispatches, seat reports, councils, ledgers)
+- source_file: VERIFICATION_ANCHOR.txt
+- source_format: txt
+- text_sha256: c4f7de1505a61a1b628c724f72d8decc66200095268855db9c77a3d9c5796c4e
+
+# VERIFICATION ANCHOR -- Minimal byte-level references
+# The code layer is clean since v0.32. This file provides only:
+# (A) HISTORY.sha256 -- for entry seal verification
+# (B) Gate [2f] excerpt -- the ONE code-level R14 repair
+
+================================================================
+A. HISTORY.sha256 (entry seal chain, 56 entries + FULL_SECTION_27 + PRIOR_HISTORY)
+================================================================
+32d88f81e228863c9f21d82b5116a3dd7d4a2142585e0e710ddb0c051c62a743  ENTRY_v0.1
+099e237bb32dbf3f2b99fb54589d3fbc69108ad7b093af201a55d2016a2aad06  ENTRY_v0.2
+d9118f22a76f6ed9c7a3ab74b0a890a5b1b856952e7ef67ef15a217ca25247ed  ENTRY_v0.3
+6e1df3dcf2402becddb9c8e612a1f49e9d41a31195f483d0d5a46641c764e4a3  ENTRY_v0.4
+42bbd5d2214aa099986598769c1046901047742a36ee0ac1a5a734467c6d0d94  ENTRY_v0.5
+a413b4a8635cd12d3878afb702978c5dd83a781ac60bde3fbac9ed716849b4bd  ENTRY_v0.6
+3f923e6319290aba05855617969090232cdc1869f0c3765c0ff5fe0b161234bc  ENTRY_v0.7
+699926fab8f61a2729b8ef19d507fc0565dbda265138b769390583121b3ab9ed  ENTRY_v0.8
+5c3aabe1bb59751d80d5870b863d1ad37466fcd40f30ffd6911908778e05e88c  ENTRY_v0.9
+916cec4d9365f1892afacbe01d76187c1f8964d1aa616766d24161cdc5aed037  ENTRY_v0.10
+607093a0715237411216802a7bebbe398f029fb794877d96f39d89696b9700b1  ENTRY_v0.11
+f4f5ed3daad7d04cb180fae12e13abc02b049628e0fa675bf93005d51a8d96dd  ENTRY_v0.12
+7671ce6aff25c8c0a4b32e2878b5c5468851fe3907456d6b250a5023894d937b  ENTRY_v0.13
+fb0456b6ad10e4b0661c549aa4cad747224b68ee896f51d10775219e0803a2ba  ENTRY_v0.14
+7829abd7dd612f64bd27d4cd2f9f3abb586fdc5baaab2a4ce650f091aac3f768  ENTRY_v0.15
+ce68976c768d3b6cec0dceefa730fe29837d67f20e97caaf6b3581bbf1840b8b  ENTRY_v0.16
+57a6228057eaa76ac1e1d54862f60c66b557487b68b452df641d68b6031ea5fd  ENTRY_v0.17
+eafb457dc6c54caf2ce1d057544b57298e0c7ad4c8acae8e37bea801751d2d3b  ENTRY_v0.18
+01c8f789b219cd0f4e729eb928cb0554737c2691d85b847419046eff6f4e696d  ENTRY_v0.19
+3b47f5b7c3c1a05269df7ccbf0bfe797c1111cefe40f346f56e841a052fa1958  ENTRY_v0.20
+c6fddbb487f7f98a93760d9849b50acd9726354aeb512099a57b2407f74befd6  ENTRY_v0.21
+18c575b43e29248013e276742335ebf8e8593b082a73e519c5c35cf65ae641bf  ENTRY_v0.22
+debbff4b000549dcac2c907c211bd19f1909370d4f46f35b985e0607bd3c6a41  ENTRY_v0.23
+bb5c256518d7c5628fd337deceb0c45d18ecd076715afbef5195df356165319b  ENTRY_v0.24
+492d9bd2e11b74ce5749282bea580b91cf1b85d26dcb552c62d10890bdf4eab9  ENTRY_v0.25
+b3e366a8e565365ee4ff418d200785bcc443a14467e3fdef14779f019f7be6aa  ENTRY_v0.26
+8b7ebfe5ff1376e7f7bd505fca6c61252ee1d43ea17d45b7d7b664c872b55196  ENTRY_v0.27
+a1da83f63b7baec29db5737d18f6eb4ffd4aa7d2ad2c4938ac20fdf9c87c5351  ENTRY_v0.28
+d707715c8ee710e13720cd4a864225f082d0c6bc11965beda72ddf3afecc0f20  ENTRY_v0.29
+2622abd52805720838f8c87a1571dbde8b7f4f9468e99b5ff0cbb086f86812b5  ENTRY_v0.30
+b76ba98d5ab4429503f6119fc4890b81eb2165f3e38283948c8a2471824f6e9c  ENTRY_v0.31
+d555d260127e267f1ef9794c9c8b9d6f98f952187793821655989d8096512f1c  ENTRY_v0.32
+b4721f066e8f97317fe5ed6dcdcaefcea01cd5d93e8983a4689a0c0defaca657  ENTRY_v0.33
+42d1e5bf493ca557a6e7e874ecbaf5e604b76ab974a8060bdc53726ad743e7d7  ENTRY_v0.34
+958c1617df3ab61b2db40de8c7ad476663b21efdb8df7b888602edc10c2987c3  ENTRY_v0.35
+551e24fced1e161c3afb7e5970a4307d241e637c383705f5de267f043acc6e96  ENTRY_v0.36
+06202049a9ee0363ab56931b1f2831708e3fec023122926a73398ff2d77fb387  ENTRY_v0.37
+d5e11b9a178b304ae73c99861500440aac8dba5c53fd4b3ba5554df17c202429  ENTRY_v0.38
+beeed4268d487d01622e6bc603e4e4ddeba90995effde4ff26799765f2a81fac  ENTRY_v0.39
+8266e238b67bbde1b3fb12dc4b84ae8c41cb6ae18a09158dc2fa81d80511b22b  ENTRY_v0.40
+df10f5a86d9e3e557dc210e5e89833dd81a177593745cdfc98b552dd0c4d9781  ENTRY_v0.41
+908d52706abf0697048716e463801de4e44ea6845feee2ee8687d502b4758102  ENTRY_v0.42
+2fe31b2f219fea0dd4db7acf12f5ece3b143f2f30358ff5457ba5c4c9abb5065  ENTRY_v0.43
+4109043f182e7854952839dda35b89717beebc4dc3b28a258bc87858b2cbf67f  ENTRY_v0.44
+a5976fb50e26f201a2a091c99057d635a6c265f213258d9e18811b1539ced1d7  ENTRY_v0.45
+121e144e566b47e3bbdc998092849c179e32f3e1c73312f9862dec56747c57e7  ENTRY_v0.46
+deece36f9ed7a88956629400d26d54601f3e4e775c3ac75e1346ea194885d9dc  ENTRY_v0.47
+68a54b874802b047917d1bf5db2ca08d3d11e5ab0d3babfb1dcae64b68708a4f  ENTRY_v0.48
+5e46db3d399e5443f784332117837ce07e3ef1d60e1b27f462aa8c30f11e3241  ENTRY_v0.49
+eaaea975976a35668deee4e8d44e80dae33764ed22418cac39d43fc2996b81c4  ENTRY_v0.50
+61fdc45fa4b787bf7c3096cc70a4facff11e99466563fbb846c2838e9fb59504  ENTRY_v0.51
+4e6a4de44336bf4535697011e1323eefdfaa45dc9e0ae5dfb0d59f608a146512  ENTRY_v0.52
+e3d5f0b499cfb590946e9a5f6e23a2693ab8ff4cffe4c68982c661e55a13ebed  ENTRY_v0.53
+d430e71535d2da85b16df2488f24ccef1d348bedc0e720cbc70e528a92f83af4  ENTRY_v0.54
+7d3c55039700486825f8051bc9bdf6302a969d1ebea24c60ddaae70405808b0d  ENTRY_v0.55
+1b02b87849108fb22608d5e08b6368e25edacf29672409c891cc4564b51b076c  ENTRY_v0.56
+e857830065e03c6322debaa7a2893584b83b9d5afb41c65763fd09cd56c218c2  FULL_SECTION_27
+PRIOR_HISTORY  61cfd4feae9a091505b7dad6220a891f14f49643a2354c0f64b120529f0c9ed7
+
+================================================================
+B. Gate [2f] -- Status-provenance gate (R14 repair: tightened to VERSION-1)
+   Source: build.py lines 208-240
+================================================================
+    # [2f] Status-provenance gate (F-S01-54-02 fix: Status line provenance version must match VERSION)
+    print("\n[2f] Status-provenance gate")
+    fm_status_line = [l for l in protocol.split("\n") if l.startswith("**Status:**")]
+    if fm_status_line:
+        # The status line must reference v{VERSION} as its own identity
+        status_text = fm_status_line[0]
+        status_self_ref = re.search(r'\*\*Status:\*\*\s+v(\d+\.\d+)', status_text)
+        if status_self_ref:
+            check(status_self_ref.group(1) == VERSION,
+                  f"Status line self-reference v{status_self_ref.group(1)} == v{VERSION}")
+        else:
+            check(False, "Status line contains version self-reference")
+        # The provenance clause ("repair build from vX.XX RNN audit") must reference VERSION-1
+        prov_match = re.search(r'repair build from v(\d+\.\d+)\s+R(\d+)\s+audit', status_text)
+        if prov_match:
+            prov_ver = prov_match.group(1)
+            # The provenance version must be exactly VERSION - 1 (R14 fix: F-S02-55-03, F-S04-55-02)
+            prov_parts = prov_ver.split(".")
+            ver_parts = VERSION.split(".")
+            prov_num = int(prov_parts[0]) * 100 + int(prov_parts[1])
+            ver_num = int(ver_parts[0]) * 100 + int(ver_parts[1])
+            check(prov_num == ver_num - 1,
+                  f"Status provenance v{prov_ver} == v{VERSION} - 1")
+        else:
+            check(False, "Status line contains provenance clause 'repair build from vX.XX RNN audit'")
+    else:
+        check(False, "Front-matter Status line found")
+
+    # [2g] FB-7b row version gate (F-S01-54-03 fix: FB-7b row PENDING RE-CARRY version must match VERSION)
+    print("\n[2g] FB-7b row version gate")
+    fb7b_recarry = re.search(r'PENDING RE-CARRY v(\d+\.\d+)', protocol)
+    if fb7b_recarry:
+        # Find the LAST occurrence (the one in the FB-7b row, not in historical entries)
+
+---
+
+# Bismillah ir-Rahman ir-Rahim

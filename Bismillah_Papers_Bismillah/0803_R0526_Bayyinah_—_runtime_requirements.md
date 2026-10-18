@@ -1,0 +1,58 @@
+# Bismillah ir-Rahman ir-Rahim
+
+# R0526 -- Bayyinah — runtime requirements
+
+**Chronological Index:** 803 of 995  
+**Date:** Undated  
+**Section:** VII. Software: Bayyinah Scanner, furqan-lint & Verifiers  
+**Source File:** requirements.txt  
+**Source Format:** txt  
+**SHA-256:** `4672b686f2411f158518f013dbfcddc114f95c526d362030ac0ba6a65b0a2e0d`  
+
+---
+
+## R0526 · Bayyinah — runtime requirements
+
+- section: VII. Software: Bayyinah Scanner, furqan-lint & Verifiers
+- source_file: requirements.txt
+- source_format: txt
+- text_sha256: 4672b686f2411f158518f013dbfcddc114f95c526d362030ac0ba6a65b0a2e0d
+
+# Bayyinah — runtime requirements
+# Kept in sync with the [project.dependencies] table in pyproject.toml.
+# Install with:  pip install -r requirements.txt
+#
+# Upper bounds (added v1.1.1, Phase-26 review fix #4) extend the
+# additive-only invariant to upstream dependencies. A pymupdf 2.x or
+# pypdf 7.x release that changes the parse surface could break PDF
+# parity silently; capping at the current major versions forces any
+# compatibility step to be explicit. See pyproject.toml's
+# [project.dependencies] block for the full rationale.
+
+# PDF object-layer + text-layer extraction
+pymupdf>=1.24,<2
+pypdf>=4.0,<7
+# pikepdf - raw PDF content-stream walking for v1.1.2 Day 2 mechanism 03
+# (pdf_off_page_text). Bypasses PyMuPDF get_text(dict) silent drop of
+# spans whose origin is outside the page rectangle.
+pikepdf>=8.0,<10
+
+
+# Audio container metadata (Phase 24 - MP3 / WAV / FLAC / M4A / OGG).
+mutagen>=1.47,<2
+
+# HTTP API wrapper (api.py). Used by the Railway deployment that exposes
+# scan_file() over HTTP. The library itself does not import these.
+fastapi>=0.110,<1
+uvicorn[standard]>=0.27,<1
+python-multipart>=0.0.9,<1
+
+# Anthropic API client transport for the v1.1.9 demo router
+# (bayyinah/demo.py). Imported at module level whenever
+# BAYYINAH_DEMO_ENABLED is set, so it must be a runtime dep,
+# not a test-only one.
+httpx>=0.27,<1
+
+---
+
+# Bismillah ir-Rahman ir-Rahim
