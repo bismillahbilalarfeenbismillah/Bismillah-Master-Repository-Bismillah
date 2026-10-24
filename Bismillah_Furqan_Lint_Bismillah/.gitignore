@@ -1,0 +1,11 @@
+# Compiled Go binaries
+src/furqan_lint/go_adapter/bin/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
