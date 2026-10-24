@@ -234,6 +234,11 @@ Four checkers cross the language boundary cleanly:
   Furqan translation but are needed for the skip-list. R3 and D24 are
   non-overlapping: D24 fires on partial-path coverage (>=1 return
   present), R3 fires on zero-return shapes. Both run independently.
+* **FATIMA integrity (v0.13.0).** Optional sixth dimension: Bismillah
+  encoder seal verification via the FATIMA bridge. When enabled with
+  ``--fatima``, verifies cryptographic witness sidecars, checks import
+  bond integrity, and produces a hadith-science grade (muhkam through
+  mawdu). Runs via ``check_python_module_with_fatima()``.
 """
 
 from __future__ import annotations
@@ -246,6 +251,7 @@ from furqan.parser.ast_nodes import Module, UnionType
 
 from furqan_lint.return_none import check_return_none
 from furqan_lint.zero_return import check_zero_return
+from furqan_lint.fatima.checker import check_fatima_full, FatimaDiagnostic
 
 # ---------------------------------------------------------------------------
 # Producer predicate adaptation
@@ -367,6 +373,42 @@ def check_python_module(
 
     for d in check_return_none(module):
         diagnostics.append(("return_none_mismatch", d))
+
+    return diagnostics
+
+
+def check_python_module_with_fatima(
+    module: Module,
+    source_tree: ast.Module | None = None,
+    filepaths: list[str] | None = None,
+    *,
+    fatima: bool = False,
+) -> list[tuple[str, object]]:
+    """Run all structural checks plus optional FATIMA integrity checks.
+
+    Extends ``check_python_module`` with FATIMA attestation. When
+    ``fatima=True`` and ``filepaths`` are supplied, the FATIMA checker
+    verifies Bismillah seal integrity alongside the structural checks.
+
+    v0.13.0: FATIMA integration per Council Action Item 5.
+
+    Args:
+        module: Translated Furqan Module.
+        source_tree: Raw ast.Module for R3 (optional).
+        filepaths: List of source file paths for FATIMA checks.
+        fatima: Enable FATIMA integrity checking (default False).
+
+    Returns:
+        list of (checker_name, diagnostic) tuples. FATIMA diagnostics
+        use checker_name "fatima_integrity".
+    """
+    # Run all existing structural checks
+    diagnostics = check_python_module(module, source_tree)
+
+    # Run FATIMA integrity checks if enabled
+    if fatima and filepaths:
+        for d in check_fatima_full(filepaths):
+            diagnostics.append(("fatima_integrity", d))
 
     return diagnostics
 

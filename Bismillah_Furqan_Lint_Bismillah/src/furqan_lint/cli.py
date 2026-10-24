@@ -291,6 +291,7 @@ def main() -> int:  # noqa: PLR0915
         # verification on bundles in the path. The flag is
         # parsed out before resolving the path argument.
         gate11_enabled = False
+        fatima_enabled = False
         # Phase G11.1 audit C-1 + H-5 + H-6 corrective: include
         # the new identity-policy and force-refresh keys so the
         # dir-walker through cmd_check_gate11 can route them
@@ -343,6 +344,9 @@ def main() -> int:  # noqa: PLR0915
             elif a == "--allow-any-identity":
                 gate11_opts["allow_any_identity"] = True
                 i += 1
+            elif a == "--fatima":
+                fatima_enabled = True
+                i += 1
             else:
                 check_args.append(a)
                 i += 1
@@ -354,16 +358,73 @@ def main() -> int:  # noqa: PLR0915
             print(f"Not found: {target}", file=sys.stderr)
             return 1
         primary_exit = _check_file(target) if target.is_file() else _check_directory(target)
-        if not gate11_enabled:
-            return primary_exit
-        # When --gate11 is set, also run gate11 verification on
-        # any bundles in the directory tree. Use max(exit) so a
-        # gate11 failure escalates the overall exit code.
-        from furqan_lint.gate11.cli import cmd_check_gate11
+        exit_code = primary_exit
+        if gate11_enabled:
+            # When --gate11 is set, also run gate11 verification on
+            # any bundles in the directory tree. Use max(exit) so a
+            # gate11 failure escalates the overall exit code.
+            from furqan_lint.gate11.cli import cmd_check_gate11
 
-        directory = target if target.is_dir() else target.parent
-        gate11_exit = cmd_check_gate11(directory, gate11_opts)
-        return max(primary_exit, gate11_exit)
+            directory = target if target.is_dir() else target.parent
+            gate11_exit = cmd_check_gate11(directory, gate11_opts)
+            exit_code = max(exit_code, gate11_exit)
+        if fatima_enabled:
+            from furqan_lint.fatima.checker import (
+                check_fatima_full,
+                check_fatima_integrity,
+            )
+
+            if target.is_file():
+                # Single file: run both legacy and enhanced checks
+                fatima_diags = check_fatima_full([str(target)])
+                for d in fatima_diags:
+                    severity = "ERROR" if d.primitive.endswith(
+                        ("tampered", "violation", "corrupt")
+                    ) else "INFO"
+                    grade_tag = f" [{d.grade}]" if d.grade else ""
+                    print(
+                        f"  FATIMA {severity} {d.primitive}{grade_tag}: "
+                        f"{d.diagnosis}"
+                    )
+                if any(
+                    d.primitive.endswith(
+                        ("tampered", "violation", "corrupt")
+                    )
+                    for d in fatima_diags
+                ):
+                    exit_code = max(exit_code, 1)
+            else:
+                # Directory: batch all files for bond graph analysis
+                py_files = [
+                    str(f) for f in sorted(target.rglob("*.py"))
+                ]
+                if py_files:
+                    fatima_diags = check_fatima_full(py_files)
+                    for d in fatima_diags:
+                        severity = "ERROR" if d.primitive.endswith(
+                            ("tampered", "violation", "corrupt")
+                        ) else "INFO"
+                        grade_tag = (
+                            f" [{d.grade}]" if d.grade else ""
+                        )
+                        loc = (
+                            f" {d.location}" if d.location else ""
+                        )
+                        print(
+                            f"  FATIMA {severity} "
+                            f"{d.primitive}{grade_tag}{loc}: "
+                            f"{d.diagnosis}"
+                        )
+                    if any(
+                        d.primitive.endswith(
+                            ("tampered", "violation", "corrupt")
+                        )
+                        for d in fatima_diags
+                    ):
+                        exit_code = max(exit_code, 1)
+        if not gate11_enabled and not fatima_enabled:
+            return primary_exit
+        return exit_code
 
     if args[0] == "diff" and len(args) >= 3:
         old_path = Path(args[1])
@@ -377,6 +438,19 @@ def main() -> int:  # noqa: PLR0915
         from furqan_lint.gate11.cli import dispatch_manifest
 
         return dispatch_manifest(args[1:])
+
+    if args[0] == "seal":
+        # FATIMA seal subcommand — seals modules with Bismillah
+        # attestation sidecars.
+        from furqan_lint.fatima.cli import cmd_seal
+
+        return cmd_seal(args[1:])
+
+    if args[0] == "unseal":
+        # FATIMA unseal subcommand — removes .fatima.json sidecars.
+        from furqan_lint.fatima.cli import cmd_unseal
+
+        return cmd_unseal(args[1:])
 
     print(f"Unknown command: {args[0]}", file=sys.stderr)
     _print_usage(file=sys.stderr)
@@ -398,6 +472,9 @@ def _print_usage(file: TextIO | None = None) -> None:
         file=out,
     )
     print("  furqan-lint manifest update <module.py> [--trust-config PATH]", file=out)
+    print("  furqan-lint check --fatima <path>", file=out)
+    print("  furqan-lint seal <file.py|directory/>", file=out)
+    print("  furqan-lint unseal <file.py|directory/>", file=out)
     print("  furqan-lint version", file=out)
 
 
